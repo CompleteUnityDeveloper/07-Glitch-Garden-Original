@@ -554,7 +554,7 @@ GameObject:
   - 114: {fileID: 822728649}
   - 114: {fileID: 822728647}
   m_Layer: 5
-  m_Name: Level Cavas
+  m_Name: Level Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

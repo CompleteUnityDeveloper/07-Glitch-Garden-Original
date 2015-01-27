@@ -341,7 +341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: ed65dde16a38c42a79b8011ae4ed0bbb, type: 2}
       propertyPath: autoLoadNextLevelAfter
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed65dde16a38c42a79b8011ae4ed0bbb, type: 2}
@@ -440,7 +440,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 3cf6ad6287cbf42068bcc210b8935350, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .0399999991
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377f5e03982614d9cae4ea69d2bb9ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoLoadNextLevelAfter: 1
+  autoLoadNextLevelAfter: 3
 --- !u!4 &1686339889
 Transform:
   m_ObjectHideFlags: 0
