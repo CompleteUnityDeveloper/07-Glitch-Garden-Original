@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Appearing
+  m_Name: lizard appearing
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -51,21 +51,21 @@ AnimationClip:
       value: {fileID: 21300030, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
     - time: .533333361
       value: {fileID: 21300032, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .566666663
+    - time: .566666722
       value: {fileID: 21300034, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .600000024
+    - time: .600000083
       value: {fileID: 21300036, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .633333325
+    - time: .633333445
       value: {fileID: 21300038, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .666666687
+    - time: .666666806
       value: {fileID: 21300040, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .699999988
+    - time: .700000167
       value: {fileID: 21300042, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .733333349
+    - time: .733333528
       value: {fileID: 21300044, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .766666651
+    - time: .766666889
       value: {fileID: 21300046, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
-    - time: .800000012
+    - time: .80000025
       value: {fileID: 21300048, guid: 3991ba177e1fb40e3861dc0e837ff9f6, type: 3}
     attribute: m_Sprite
     path: 
@@ -113,7 +113,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .833333373
+    m_StopTime: .833333611
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
