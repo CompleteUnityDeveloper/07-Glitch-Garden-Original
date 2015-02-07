@@ -35,14 +35,34 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200000}
   m_DstState: {fileID: 110227182}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .589915693
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: isAttacking Trigger
     m_EventTreshold: 0
-    m_ExitTime: 12
-  m_Atomic: 1
+    m_ExitTime: 3.38926101
+  m_Atomic: 0
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110109044
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110240538}
+  m_DstState: {fileID: 110200000}
+  m_TransitionDuration: .568564534
+  m_TransitionOffset: 1
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: 1.30440676
+  m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
@@ -55,14 +75,14 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110227182}
   m_DstState: {fileID: 110240538}
-  m_TransitionDuration: .100000001
-  m_TransitionOffset: 0
+  m_TransitionDuration: .508795917
+  m_TransitionOffset: .519024789
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: isAttacking Trigger
     m_EventTreshold: 0
-    m_ExitTime: 5
-  m_Atomic: 1
+    m_ExitTime: 5.48869753
+  m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
@@ -107,7 +127,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 19ea1d7c88676493792a54b4b8dd2c50, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 672, y: 108, z: 0}
+  m_Position: {x: 492, y: 120, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -134,6 +154,10 @@ StateMachine:
       first: {fileID: 110227182}
       second:
       - {fileID: 110129876}
+    data:
+      first: {fileID: 110240538}
+      second:
+      - {fileID: 110109044}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

@@ -29,13 +29,33 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200000}
   m_DstState: {fileID: 110200269}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .0476708524
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: 
     m_EventTreshold: 0
-    m_ExitTime: 5
+    m_ExitTime: 12.179738
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110158170
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110200269}
+  m_DstState: {fileID: 110200000}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 1
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: 7.24287701
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -60,7 +80,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hop
+  m_Name: attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -88,6 +108,10 @@ StateMachine:
       first: {fileID: 110200000}
       second:
       - {fileID: 110100000}
+    data:
+      first: {fileID: 110200269}
+      second:
+      - {fileID: 110158170}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -216, y: 24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
