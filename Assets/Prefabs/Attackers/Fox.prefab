@@ -26,6 +26,7 @@ GameObject:
   - 4: {fileID: 400450}
   - 95: {fileID: 9500450}
   - 114: {fileID: 11450704}
+  - 61: {fileID: 6134762}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -58,6 +59,17 @@ Transform:
   - {fileID: 400448}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6134762
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100450}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9500450
 Animator:
   serializedVersion: 3

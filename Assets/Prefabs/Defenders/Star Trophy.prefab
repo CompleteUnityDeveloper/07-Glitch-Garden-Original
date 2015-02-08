@@ -25,6 +25,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 432766}
   - 95: {fileID: 9532764}
+  - 61: {fileID: 6196738}
+  - 114: {fileID: 11414790}
   m_Layer: 0
   m_Name: Star Trophy
   m_TagString: Untagged
@@ -41,6 +43,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 432768}
   - 212: {fileID: 21232766}
+  - 61: {fileID: 6114790}
+  - 50: {fileID: 5014790}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -71,8 +75,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.197999999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -.280000001, z: 0}
+  m_LocalScale: {x: 1.28970563, y: 1.28970575, z: 1.28970575}
   m_Children: []
   m_Father: {fileID: 432766}
   m_RootOrder: 1
@@ -84,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 132766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 4, z: 0}
-  m_LocalScale: {x: 1.35791767, y: 1.35791767, z: 1.35791767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432770}
   - {fileID: 432764}
@@ -109,12 +113,49 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.105000079, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -.189999998, z: 0}
+  m_LocalScale: {x: 1.28970563, y: 1.28970575, z: 1.28970575}
   m_Children:
   - {fileID: 432768}
   m_Father: {fileID: 432766}
   m_RootOrder: 0
+--- !u!50 &5014790
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132768}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &6114790
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132768}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: .959999979}
+  m_Center: {x: 0, y: 0}
+--- !u!61 &6196738
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132766}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9532764
 Animator:
   serializedVersion: 3
@@ -130,6 +171,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11414790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2dd2a6951a84e06ab44d5055a84771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21232764
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459846}
   - 212: {fileID: 21259848}
+  - 61: {fileID: 6190964}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -41,6 +42,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 459848}
   - 95: {fileID: 9559848}
+  - 61: {fileID: 6122318}
+  - 114: {fileID: 11490198}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Untagged
@@ -68,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 159846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: -.109999999, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -.743431449, y: .743431449, z: .743431449}
   m_Children: []
   m_Father: {fileID: 459848}
   m_RootOrder: 1
@@ -86,6 +89,28 @@ Transform:
   - {fileID: 459846}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6122318
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159848}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!61 &6190964
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159846}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .479999989, y: .439999998}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9559848
 Animator:
   serializedVersion: 3
@@ -101,6 +126,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11490198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2dd2a6951a84e06ab44d5055a84771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21259846
 SpriteRenderer:
   m_ObjectHideFlags: 1

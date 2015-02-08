@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 435752}
   - 95: {fileID: 9535754}
+  - 61: {fileID: 6115756}
+  - 114: {fileID: 11484108}
   m_Layer: 0
   m_Name: Grave Stone
   m_TagString: Untagged
@@ -40,7 +42,7 @@ Transform:
   m_GameObject: {fileID: 135752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7, y: 3, z: 0}
-  m_LocalScale: {x: .45159331, y: .451593369, z: .451593369}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 435754}
   m_Father: {fileID: 0}
@@ -52,11 +54,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0299999993, y: -.100000001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: .0299999993, y: -.0500000007, z: 0}
+  m_LocalScale: {x: .480000019, y: .480000019, z: .480000019}
   m_Children: []
   m_Father: {fileID: 435752}
   m_RootOrder: 0
+--- !u!61 &6115756
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135752}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9535754
 Animator:
   serializedVersion: 3
@@ -72,6 +85,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11484108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2dd2a6951a84e06ab44d5055a84771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21235754
 SpriteRenderer:
   m_ObjectHideFlags: 1

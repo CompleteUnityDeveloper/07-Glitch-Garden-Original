@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 435692}
   - 95: {fileID: 9535696}
+  - 61: {fileID: 6157432}
+  - 114: {fileID: 11469432}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Untagged
@@ -25,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435694}
   - 212: {fileID: 21235694}
+  - 61: {fileID: 6141880}
   m_Layer: 0
   m_Name: Corgette
   m_TagString: Untagged
@@ -56,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 135692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 2, z: 0}
-  m_LocalScale: {x: -.840000033, y: .840000093, z: .840000093}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 435696}
   - {fileID: 435694}
@@ -70,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 135694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.899999976, y: -.0399999991, z: 0}
-  m_LocalScale: {x: .652800083, y: .652800083, z: .652800083}
+  m_LocalScale: {x: .574464083, y: .574464083, z: .574464083}
   m_Children: []
   m_Father: {fileID: 435692}
   m_RootOrder: 1
@@ -82,10 +85,32 @@ Transform:
   m_GameObject: {fileID: 135696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .879999995, y: .879999995, z: .879999995}
   m_Children: []
   m_Father: {fileID: 435692}
   m_RootOrder: 0
+--- !u!61 &6141880
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135694}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .559999943, y: .559999943}
+  m_Center: {x: 0, y: 0}
+--- !u!61 &6157432
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135692}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9535696
 Animator:
   serializedVersion: 3
@@ -101,6 +126,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11469432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2dd2a6951a84e06ab44d5055a84771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21235694
 SpriteRenderer:
   m_ObjectHideFlags: 1
