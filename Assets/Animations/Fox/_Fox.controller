@@ -7,7 +7,19 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: _Fox
   serializedVersion: 2
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: jump trigger
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isAttacking
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -20,47 +32,27 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110100000
+--- !u!1101 &110150666
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110235979}
-  m_TransitionDuration: .0781830549
-  m_TransitionOffset: .200441316
-  m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
-    m_EventTreshold: 0
-    m_ExitTime: 1.82348597
-  m_Atomic: 0
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
---- !u!1101 &110188160
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110203949}
+  m_SrcState: {fileID: 110235979}
   m_DstState: {fileID: 110200000}
   m_TransitionDuration: 0
-  m_TransitionOffset: .967228353
+  m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 1
+    m_ConditionEvent: isAttacking
     m_EventTreshold: 0
-    m_ExitTime: 2.99993491
+    m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110193499
+--- !u!1101 &110153586
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
@@ -69,16 +61,56 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110235979}
   m_DstState: {fileID: 110203949}
-  m_TransitionDuration: .370355666
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: jump trigger
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110155582
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110200000}
+  m_DstState: {fileID: 110235979}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isAttacking
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110169708
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110203949}
+  m_DstState: {fileID: 110235979}
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: 
+    m_ConditionEvent: isAttacking
     m_EventTreshold: 0
-    m_ExitTime: 3.62578511
-  m_Atomic: 0
+    m_ExitTime: 1
+  m_Atomic: 1
   m_Solo: 0
-  m_Mute: 1
+  m_Mute: 0
   m_CanTransitionToSelf: 0
 --- !u!1102 &110200000
 State:
@@ -91,7 +123,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 8a934a05a124d4935a8607a7b9d10ebb, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 300, y: 216, z: 0}
+  m_Position: {x: 144, y: 216, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -143,15 +175,16 @@ StateMachine:
     data:
       first: {fileID: 110235979}
       second:
-      - {fileID: 110193499}
+      - {fileID: 110153586}
+      - {fileID: 110150666}
     data:
       first: {fileID: 110200000}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110155582}
     data:
       first: {fileID: 110203949}
       second:
-      - {fileID: 110188160}
+      - {fileID: 110169708}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -336, y: -12, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
