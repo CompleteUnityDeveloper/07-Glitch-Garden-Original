@@ -111,7 +111,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435752, guid: e64ab3b56d713422cbdfb4df9d5342e2, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e64ab3b56d713422cbdfb4df9d5342e2, type: 2}
@@ -457,7 +457,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432766, guid: 78e28c05c1b66419db6d12f90d173661, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 432766, guid: 78e28c05c1b66419db6d12f90d173661, type: 2}
       propertyPath: m_LocalPosition.z
@@ -481,7 +481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432766, guid: 78e28c05c1b66419db6d12f90d173661, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78e28c05c1b66419db6d12f90d173661, type: 2}
@@ -653,13 +653,13 @@ Transform:
   m_PrefabInternal: {fileID: 216034718}
   m_GameObject: {fileID: 350086069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 4, z: 0}
+  m_LocalPosition: {x: 1, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1438413951}
   - {fileID: 206889469}
   m_Father: {fileID: 829950992}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!61 &350086072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -892,6 +892,7 @@ GameObject:
   - 95: {fileID: 557510230}
   - 61: {fileID: 557510228}
   - 114: {fileID: 557510231}
+  - 114: {fileID: 557510232}
   m_Layer: 0
   m_Name: Grave Stone
   m_TagString: Untagged
@@ -923,7 +924,7 @@ Transform:
   m_Children:
   - {fileID: 148511254}
   m_Father: {fileID: 829950992}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!95 &557510230
 Animator:
   serializedVersion: 3
@@ -952,6 +953,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2dd2a6951a84e06ab44d5055a84771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &557510232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400660, guid: e64ab3b56d713422cbdfb4df9d5342e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1880800497}
+  m_GameObject: {fileID: 557510227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81873ad4d76f046908c31450a1fac401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668426692
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +976,8 @@ GameObject:
   - 95: {fileID: 668426693}
   - 114: {fileID: 668426694}
   - 61: {fileID: 668426696}
+  - 114: {fileID: 668426697}
+  - 50: {fileID: 668426698}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -998,7 +1013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a05235cea1343b9a049cf174cebe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpeed: 0
 --- !u!4 &668426695
 Transform:
   m_ObjectHideFlags: 0
@@ -1024,6 +1038,32 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: 0}
+--- !u!114 &668426697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668426692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46beef769d12408b82ee0447ffda9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &668426698
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668426692}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &720264909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,9 +1312,9 @@ Transform:
   m_Children:
   - {fileID: 1998837465}
   - {fileID: 1071272005}
+  - {fileID: 1227646076}
   - {fileID: 557510229}
   - {fileID: 350086071}
-  - {fileID: 1227646076}
   - {fileID: 1321865326}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1379,7 +1419,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435692, guid: 8d2066ec7fede4a8387927e8df631e60, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 435692, guid: 8d2066ec7fede4a8387927e8df631e60, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1419,7 +1459,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 459848, guid: db4c3a3e6dfa0428696be5995b10d1c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 459848, guid: db4c3a3e6dfa0428696be5995b10d1c2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1479,7 +1519,7 @@ Transform:
   m_PrefabInternal: {fileID: 940166721}
   m_GameObject: {fileID: 1071272004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 4, z: 0}
+  m_LocalPosition: {x: 1, y: 4, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1868400351}
@@ -1601,6 +1641,8 @@ GameObject:
   - 95: {fileID: 1153964464}
   - 114: {fileID: 1153964465}
   - 61: {fileID: 1153964467}
+  - 50: {fileID: 1153964469}
+  - 114: {fileID: 1153964468}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -1636,7 +1678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a05235cea1343b9a049cf174cebe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpeed: 0
 --- !u!4 &1153964466
 Transform:
   m_ObjectHideFlags: 0
@@ -1644,7 +1685,7 @@ Transform:
   m_PrefabInternal: {fileID: 2124112075}
   m_GameObject: {fileID: 1153964463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3, z: 0}
+  m_LocalPosition: {x: 9, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1360592511}
@@ -1662,6 +1703,32 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1153964468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153964463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00374b7ec2d1341dd95e0716883feccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1153964469
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153964463}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1174554703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1821,7 @@ GameObject:
   - 95: {fileID: 1227646079}
   - 61: {fileID: 1227646078}
   - 114: {fileID: 1227646077}
+  - 114: {fileID: 1227646080}
   m_Layer: 0
   m_Name: Grave Stone
   m_TagString: Untagged
@@ -1773,7 +1841,7 @@ Transform:
   m_Children:
   - {fileID: 1243478055}
   m_Father: {fileID: 829950992}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!114 &1227646077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,6 +1882,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1227646080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400660, guid: e64ab3b56d713422cbdfb4df9d5342e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 30019232}
+  m_GameObject: {fileID: 1227646075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81873ad4d76f046908c31450a1fac401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243478054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1956,7 @@ GameObject:
   - 95: {fileID: 1321865329}
   - 61: {fileID: 1321865328}
   - 114: {fileID: 1321865327}
+  - 114: {fileID: 1321865330}
   m_Layer: 0
   m_Name: Grave Stone
   m_TagString: Untagged
@@ -1936,6 +2017,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1321865330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400660, guid: e64ab3b56d713422cbdfb4df9d5342e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2018890104}
+  m_GameObject: {fileID: 1321865325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81873ad4d76f046908c31450a1fac401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1333997703
 Prefab:
   m_ObjectHideFlags: 0
@@ -2299,7 +2392,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435752, guid: e64ab3b56d713422cbdfb4df9d5342e2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e64ab3b56d713422cbdfb4df9d5342e2, type: 2}
@@ -2359,7 +2452,7 @@ Transform:
   m_PrefabInternal: {fileID: 935917437}
   m_GameObject: {fileID: 1998837462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 2, z: 0}
+  m_LocalPosition: {x: 1, y: 3, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 505932962}
@@ -2460,11 +2553,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400450, guid: 2c70665c11266425294518fa7677cf8e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400450, guid: 2c70665c11266425294518fa7677cf8e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400450, guid: 2c70665c11266425294518fa7677cf8e, type: 2}
       propertyPath: m_LocalPosition.z
