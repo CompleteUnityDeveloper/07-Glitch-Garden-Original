@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b549c7a93d9417b8412ddc8c341cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 200
 --- !u!1 &668426692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b549c7a93d9417b8412ddc8c341cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 200
 --- !u!1 &1229597543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b549c7a93d9417b8412ddc8c341cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 200
 --- !u!1001 &1333997703
 Prefab:
   m_ObjectHideFlags: 0
