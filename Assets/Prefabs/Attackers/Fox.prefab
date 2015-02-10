@@ -27,6 +27,9 @@ GameObject:
   - 95: {fileID: 9500450}
   - 114: {fileID: 11450704}
   - 61: {fileID: 6134762}
+  - 50: {fileID: 5007732}
+  - 114: {fileID: 11407732}
+  - 114: {fileID: 11415984}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -53,12 +56,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3, z: 0}
+  m_LocalPosition: {x: 9, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400448}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5007732
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100450}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &6134762
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -85,6 +103,29 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11407732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00374b7ec2d1341dd95e0716883feccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11415984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b549c7a93d9417b8412ddc8c341cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!114 &11450704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,7 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a05235cea1343b9a049cf174cebe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: .400000006
 --- !u!212 &21200450
 SpriteRenderer:
   m_ObjectHideFlags: 1
