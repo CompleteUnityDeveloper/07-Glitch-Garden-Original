@@ -25,10 +25,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 439280}
   - 95: {fileID: 9539278}
-  - 114: {fileID: 11469580}
   - 61: {fileID: 6177390}
-  - 114: {fileID: 11428912}
   - 50: {fileID: 5028912}
+  - 114: {fileID: 11469580}
+  - 114: {fileID: 11428912}
   - 114: {fileID: 11415984}
   m_Layer: 0
   m_Name: Lizard

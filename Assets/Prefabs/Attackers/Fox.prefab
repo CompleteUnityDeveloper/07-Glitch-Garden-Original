@@ -25,9 +25,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400450}
   - 95: {fileID: 9500450}
-  - 114: {fileID: 11450704}
   - 61: {fileID: 6134762}
   - 50: {fileID: 5007732}
+  - 114: {fileID: 11450704}
   - 114: {fileID: 11407732}
   - 114: {fileID: 11415984}
   m_Layer: 0

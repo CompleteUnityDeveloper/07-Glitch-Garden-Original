@@ -11,8 +11,8 @@ GameObject:
   - 95: {fileID: 9535754}
   - 61: {fileID: 6115756}
   - 114: {fileID: 11484108}
-  - 114: {fileID: 11400660}
   - 114: {fileID: 11473852}
+  - 114: {fileID: 11400660}
   m_Layer: 0
   m_Name: Grave Stone
   m_TagString: Untagged
