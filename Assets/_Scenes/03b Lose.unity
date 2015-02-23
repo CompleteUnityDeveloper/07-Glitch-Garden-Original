@@ -365,8 +365,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -625, y: -8}
-  m_SizeDelta: {x: 223, y: 67}
+  m_AnchoredPosition: {x: -548.5, y: -95}
+  m_SizeDelta: {x: 377, y: 65}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &479778287
 MonoBehaviour:
@@ -448,7 +448,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: Start Again
 --- !u!222 &479778289
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -507,7 +507,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -826,19 +825,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -625
+      value: -548.5
       objectReference: {fileID: 0}
     - target: {fileID: 22400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: -95
       objectReference: {fileID: 0}
     - target: {fileID: 22400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 223
+      value: 377
       objectReference: {fileID: 0}
     - target: {fileID: 22400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 67
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 22400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
       propertyPath: m_AnchorMin.x
@@ -863,6 +862,10 @@ Prefab:
     - target: {fileID: 22400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
       propertyPath: m_Pivot.y
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
+      propertyPath: m_Text
+      value: Start Again
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f37a01d8d8fd644e585e874d6c44f61b, type: 2}
@@ -928,7 +931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Moose!
+  m_Text: You Lose!
 --- !u!222 &1654444588
 CanvasRenderer:
   m_ObjectHideFlags: 0
