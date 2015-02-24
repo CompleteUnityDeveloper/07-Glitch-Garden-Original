@@ -87,7 +87,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Size: {x: .5, y: .5}
-  m_Center: {x: 0, y: 0}
+  m_Center: {x: .330000013, y: 0}
 --- !u!95 &9539278
 Animator:
   serializedVersion: 3
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300002, guid: 4a3dacb38d6c049f7ac0ce1b8b4e85c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
