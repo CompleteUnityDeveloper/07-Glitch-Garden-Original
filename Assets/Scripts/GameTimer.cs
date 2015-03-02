@@ -35,10 +35,25 @@ public class GameTimer : MonoBehaviour {
 		
 		bool timeIsUp = (Time.timeSinceLevelLoad >= levelSeconds);
 		if (timeIsUp && !isEndOfLevel) {
-			audioSource.Play ();
-			winLabel.SetActive(true);
-			Invoke ("LoadNextLevel", audioSource.clip.length);
-			isEndOfLevel = true;
+			HandleWinCondition ();
+		}
+	}
+
+	void HandleWinCondition ()
+	{
+		DestroyAllTaggedObjects();
+		audioSource.Play ();
+		winLabel.SetActive (true);
+		Invoke ("LoadNextLevel", audioSource.clip.length);
+		isEndOfLevel = true;
+	}
+	
+	// Destroys all objects with destroyOnWin tag
+	void DestroyAllTaggedObjects() {
+		GameObject[] taggedObjectArray = GameObject.FindGameObjectsWithTag ("destroyOnWin");
+		
+		foreach (GameObject taggedObject in taggedObjectArray) {
+			Destroy (taggedObject);
 		}
 	}
 	
