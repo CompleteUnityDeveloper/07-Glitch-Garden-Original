@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Appearing
+  m_Name: lizard appearing
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
