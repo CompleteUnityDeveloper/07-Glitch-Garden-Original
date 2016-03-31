@@ -7,4 +7,4 @@ In this section our students learn...
 + More advanced 2D animations.
 + Using a component architecture.
 
-If you are interested in seeing how this code was written as part of our epic 40+ hour course, then use [this coupon](https://www.udemy.com/unitycourse/?couponCode=GitHubSpecial) to gain 80% of the RRP.
+If you are interested in seeing how this code was written as part of our epic 40+ hour course, then use [this coupon](https://www.udemy.com/unitycourse/?couponCode=GitHubDiscount) to gain 80% of the RRP.
