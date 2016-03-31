@@ -1,5 +1,5 @@
 # Text 101
-A basic Plants vs. Zombies clone as part of [The Complete Unity Developer](https://www.udemy.com/unitycourse/?couponCode=GitHubSpecial) course - Udemy's most successful Unity 3D tutorial.
+A basic Plants vs. Zombies clone as part of [The Complete Unity Developer](https://www.udemy.com/unitycourse/?couponCode=GitHubDiscount) course - Udemy's most successful Unity 3D tutorial.
 
 In this section our students learn...
 
