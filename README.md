@@ -397,6 +397,3 @@ _\* Thanks to Marko for suggesting this._
 
 
 ### Section 7 Wrap Up ###
-
----
-Find out more about our [Complete Unity Developer Course](https://www.udemy.com/unitycourse?couponCode=GitHubDiscount).
