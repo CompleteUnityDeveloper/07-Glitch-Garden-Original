@@ -7,7 +7,8 @@ public class PlayerPrefsManager : MonoBehaviour {
 	const string DIFFICULTY_KEY = "difficulty";
 	const string LEVEL_KEY = "level_unlocked_";
 
-	public static void SetMasterVolume (float volume) {
+	public static void SetMasterVolume (float volume)
+    {
 		if (volume >= 0f && volume <= 1f) {
 			PlayerPrefs.SetFloat (MASTER_VOLUME_KEY, volume);
 		} else {
@@ -39,7 +40,6 @@ public class PlayerPrefsManager : MonoBehaviour {
 			return false;
 		}
 	}
-	
 	
 	public static void SetDifficulty (float difficulty) {
 		if (difficulty >= 1f && difficulty <= 3f) {

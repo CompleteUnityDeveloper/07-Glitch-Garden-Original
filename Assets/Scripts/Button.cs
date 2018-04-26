@@ -2,32 +2,33 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Button : MonoBehaviour {
-	
-	public GameObject defenderPrefab;
+public class Button : MonoBehaviour
+{	
+    // configuration parameters, consdier SO
+    [SerializeField] GameObject defenderPrefab;
+
+    // private instance variables for state
+
+    // cached references for readability
+    Button[] buttons;
 	public static GameObject selectedDefender;
 		
-	private Button[] buttonArray;
-	private Text costText;
-	
-	// Use this for initialization
-	void Start () {
-		buttonArray = GameObject.FindObjectsOfType<Button>();
+    // messages, then public methods, then private methods...
+	void Start ()
+    {
+		buttons = FindObjectsOfType<Button>();
 		
-		costText = GetComponentInChildren<Text>();
-		if (!costText) {Debug.LogWarning (name + " has no cost ");}
+        Text costText = GetComponentInChildren<Text>();
+		if (!costText) {Debug.LogWarning (name + " has no cost text");}
 		
 		costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-	
-	void OnMouseDown () {
-		foreach (Button thisButton in buttonArray) {
-			thisButton.GetComponent<SpriteRenderer>().color = Color.black;
+
+	void OnMouseDown ()
+    {
+		foreach (Button button in buttons)
+        {
+            button.GetComponent<SpriteRenderer>().color = Color.black;
 		}
 		
 		GetComponent<SpriteRenderer>().color = Color.white;

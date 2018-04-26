@@ -7,24 +7,28 @@ public class DefenderSpawner : MonoBehaviour {
 	private GameObject parent;
 	private StarDisplay starDisplay;
 	
-	void Start () {
-		parent = GameObject.Find ("Defenders");
-		starDisplay = GameObject.FindObjectOfType<StarDisplay>();
-		
+	void Start ()
+    {
+        starDisplay = FindObjectOfType<StarDisplay>();
+        parent = GameObject.Find ("Defenders");
 		if (!parent) {
 			parent = new GameObject("Defenders");
 		}
 	}
 	
-	void OnMouseDown () {
+	void OnMouseDown ()
+    {
 		Vector2 rawPos = CalculateWorldPointOfMouseClick();
 		Vector2 roundedPos = SnapToGrid (rawPos);
 		GameObject defender = Button.selectedDefender;
 		
 		int defenderCost = defender.GetComponent<Defender>().starCost;
-		if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS) {
+		if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS)
+        {
 			SpawnDefender (roundedPos, defender);
-		} else {
+		}
+        else
+        {
 			Debug.Log ("Insufficient stars to spawn");
 		}
 	}
@@ -36,13 +40,16 @@ public class DefenderSpawner : MonoBehaviour {
 		newDef.transform.parent = parent.transform;
 	}
 	
-	Vector2 SnapToGrid (Vector2 rawWorldPos) {
+	Vector2 SnapToGrid (Vector2 rawWorldPos)
+    {
 		float newX = Mathf.RoundToInt (rawWorldPos.x);
 		float newY = Mathf.RoundToInt (rawWorldPos.y);
 		return new Vector2 (newX, newY);
 	}
 	
-	Vector2 CalculateWorldPointOfMouseClick () {
+
+	Vector2 CalculateWorldPointOfMouseClick ()
+    {
 		float mouseX = Input.mousePosition.x;
 		float mouseY = Input.mousePosition.y;
 		float distanceFromCamera = 10f;
