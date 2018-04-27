@@ -10,7 +10,7 @@ public class Attacker : MonoBehaviour
     [SerializeField] float seenEverySeconds;
 
     // private instance variables for state
-    private float currentSpeed;
+    float currentSpeed;
 
     // cached references for readability
     GameObject currentTarget;
