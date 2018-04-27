@@ -2,45 +2,54 @@
 using System.Collections;
 
 [RequireComponent (typeof (Rigidbody2D))]
-public class Attacker : MonoBehaviour {
+public class Attacker : MonoBehaviour
+{
+    // configuration parameters, consider SO
+    [Range(1f, 10f)]
+    [Tooltip("Average number of seconds between appearances")]
+    [SerializeField] float seenEverySeconds;
 
-	[Tooltip ("Average number of seconds between appearances")]
-	public float seenEverySeconds;
-	private float currentSpeed;
-	private GameObject currentTarget;
-	private Animator animator;
-	
-	void Start () {
-		animator = GetComponent<Animator>();
-	}
+    // private instance variables for state
+    private float currentSpeed;
+
+    // cached references for readability
+    GameObject currentTarget;
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		transform.Translate (Vector3.left * currentSpeed * Time.deltaTime);
-		if (!currentTarget) {
-			animator.SetBool ("isAttacking", false);
+		if (!currentTarget)
+        {
+            GetComponent<Animator>().SetBool("isAttacking", false);
 		}
 	}
 	
-	void OnTriggerEnter2D () {
-		
-	}
-	
-	public void SetSpeed (float speed) {
+	public void SetSpeed(float speed)
+    {
 		currentSpeed = speed;
 	}
 	
 	// Called from the animator at time of actual blow
-	public void  StrikeCurrentTarget (float damage) {
-		if (currentTarget) {
+	public void  StrikeCurrentTarget(float damage)
+    {
+		if (currentTarget)
+        {
 			Health health = currentTarget.GetComponent<Health>();
-			if (health) {
+            if (currentTarget.GetComponent<Health>())
+            {
 				health.DealDamage (damage);
 			}
 		}
 	}
 	
-	public void Attack (GameObject obj) {
+	public void Attack(GameObject obj)
+    {
 		currentTarget = obj;
 	}
+
+    public float GetSpawnsPerSecond()
+    {
+        return seenEverySeconds;
+    }
 }
