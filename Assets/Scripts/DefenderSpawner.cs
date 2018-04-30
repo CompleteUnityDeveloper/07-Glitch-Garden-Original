@@ -1,36 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DefenderSpawner : MonoBehaviour {
+public class DefenderSpawner : MonoBehaviour
+{
+    const string DEFENDER_NAME = "Defenders";
 
-	public Camera myCamera;
-	private GameObject parent;
-	private StarDisplay starDisplay;
-	
+    [SerializeField] AudioClip noDefenderSelected;
+
+    private GameObject parent;
+
+    // messages, then public methods, then private methods...
 	void Start ()
     {
-        starDisplay = FindObjectOfType<StarDisplay>();
-        parent = GameObject.Find ("Defenders");
-		if (!parent) {
-			parent = new GameObject("Defenders");
-		}
-	}
-	
-	void OnMouseDown ()
+        CreateDefenderParent();
+    }
+
+    private void CreateDefenderParent()
     {
-		Vector2 rawPos = CalculateWorldPointOfMouseClick();
-		Vector2 roundedPos = SnapToGrid (rawPos);
+        parent = GameObject.Find(DEFENDER_NAME);
+        if (!parent)
+        {
+            parent = new GameObject(DEFENDER_NAME);
+        }
+    }
+
+    void OnMouseDown()
+    {
+        Vector2 clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
+        Vector2 gridPos = SnapToGrid(worldPos);
+
 		GameObject defender = Button.selectedDefender;
         if (defender == null)
         {
             Debug.LogWarning("No defender selected");
+            AudioSource.PlayClipAtPoint(noDefenderSelected, transform.position);
             return;
         }
 		
 		int defenderCost = defender.GetComponent<Defender>().GetStarCost();
+        var starDisplay = FindObjectOfType<StarDisplay>();
 		if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS)
         {
-			SpawnDefender (roundedPos, defender);
+			SpawnDefender(gridPos, defender);
 		}
         else
         {
@@ -38,30 +50,22 @@ public class DefenderSpawner : MonoBehaviour {
 		}
 	}
 
-	void SpawnDefender (Vector2 roundedPos, GameObject defender)
+    private Vector2 SnapToGrid(Vector2 rawWorldPos)
+    {
+        float newX = Mathf.RoundToInt(rawWorldPos.x);
+        float newY = Mathf.RoundToInt(rawWorldPos.y);
+        return new Vector2(newX, newY);
+    }
+
+	private void SpawnDefender (Vector2 roundedPos, GameObject defender)
 	{
 		Quaternion zeroRot = Quaternion.identity;
 		GameObject newDef = Instantiate (defender, roundedPos, zeroRot) as GameObject;
 		newDef.transform.parent = parent.transform;
 	}
 	
-	Vector2 SnapToGrid (Vector2 rawWorldPos)
-    {
-		float newX = Mathf.RoundToInt (rawWorldPos.x);
-		float newY = Mathf.RoundToInt (rawWorldPos.y);
-		return new Vector2 (newX, newY);
-	}
+
 	
 
-	Vector2 CalculateWorldPointOfMouseClick ()
-    {
-		float mouseX = Input.mousePosition.x;
-		float mouseY = Input.mousePosition.y;
-		float distanceFromCamera = 10f;
-		
-		Vector3 weirdTriplet = new Vector3 (mouseX, mouseY, distanceFromCamera);
-		Vector2 worldPos = myCamera.ScreenToWorldPoint (weirdTriplet);
-		
-		return worldPos;
-	}
+
 }
