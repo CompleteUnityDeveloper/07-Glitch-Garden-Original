@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (Rigidbody2D))]
+[RequireComponent(typeof (Rigidbody2D))]
 public class Attacker : MonoBehaviour
 {
     // configuration parameters, consider SO

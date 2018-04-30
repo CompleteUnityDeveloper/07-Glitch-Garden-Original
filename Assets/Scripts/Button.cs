@@ -11,7 +11,7 @@ public class Button : MonoBehaviour
 
     // cached references for readability
     Button[] buttons;
-	public static GameObject selectedDefender;
+	public static GameObject selectedDefender; // todo remove static
 		
     // messages, then public methods, then private methods...
 	void Start ()
@@ -19,9 +19,9 @@ public class Button : MonoBehaviour
 		buttons = FindObjectsOfType<Button>();
 		
         Text costText = GetComponentInChildren<Text>();
-		if (!costText) {Debug.LogWarning (name + " has no cost text");}
+		if (!costText) { Debug.LogWarning (name + " has no cost text"); }
 		
-		costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
+		costText.text = defenderPrefab.GetComponent<Defender>().GetStarCost().ToString();
 	}
 
 	void OnMouseDown ()
