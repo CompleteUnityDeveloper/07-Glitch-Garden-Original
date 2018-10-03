@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DefenderSpawner : MonoBehaviour
 {
+    GameObject selectedDefender;
+
     const string DEFENDER_NAME = "Defenders";
 
     [SerializeField] AudioClip noDefenderSelected;
@@ -13,6 +15,11 @@ public class DefenderSpawner : MonoBehaviour
 	void Start ()
     {
         CreateDefenderParent();
+    }
+
+    public void SetSelectedDefender(GameObject defenderToSelect)
+    {
+        selectedDefender = defenderToSelect;
     }
 
     private void CreateDefenderParent()
@@ -30,7 +37,7 @@ public class DefenderSpawner : MonoBehaviour
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
         Vector2 gridPos = SnapToGrid(worldPos);
 
-		GameObject defender = Button.selectedDefender;
+		GameObject defender = selectedDefender;
         if (defender == null)
         {
             Debug.LogWarning("No defender selected");
@@ -63,9 +70,4 @@ public class DefenderSpawner : MonoBehaviour
 		GameObject newDef = Instantiate (defender, roundedPos, zeroRot) as GameObject;
 		newDef.transform.parent = parent.transform;
 	}
-	
-
-	
-
-
 }

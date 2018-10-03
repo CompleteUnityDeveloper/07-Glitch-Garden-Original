@@ -7,16 +7,14 @@ public class Button : MonoBehaviour
     // configuration parameters, consdier SO
     [SerializeField] GameObject defenderPrefab;
 
-    // private instance variables for state
+    DefenderSpawner defenderSpawner;
 
-    // cached references for readability
     Button[] buttons;
-	public static GameObject selectedDefender; // todo remove static
-		
-    // messages, then public methods, then private methods...
-	void Start ()
+
+    void Start ()
     {
-		buttons = FindObjectsOfType<Button>();
+        defenderSpawner = FindObjectOfType<DefenderSpawner>();
+        buttons = FindObjectsOfType<Button>();
 		
         Text costText = GetComponentInChildren<Text>();
 		if (!costText) { Debug.LogWarning (name + " has no cost text"); }
@@ -32,6 +30,6 @@ public class Button : MonoBehaviour
 		}
 		
 		GetComponent<SpriteRenderer>().color = Color.white;
-		selectedDefender = defenderPrefab;
+        defenderSpawner.SetSelectedDefender(defenderPrefab);
 	}
 }
