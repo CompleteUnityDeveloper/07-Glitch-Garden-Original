@@ -5,12 +5,9 @@ using System.Collections;
 public class Attacker : MonoBehaviour
 {
     // configuration parameters, consider SO
-    [Range(1f, 10f)]
-    [Tooltip("Average number of seconds between appearances")]
-    [SerializeField] float seenEverySeconds;
 
     // private instance variables for state
-    float currentSpeed;
+    [SerializeField] float movementSpeed = 1f;
 
     // cached references for readability
     GameObject currentTarget;
@@ -18,16 +15,11 @@ public class Attacker : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		transform.Translate (Vector3.left * currentSpeed * Time.deltaTime);
+		transform.Translate (Vector2.left * movementSpeed * Time.deltaTime);
 		if (!currentTarget)
         {
             GetComponent<Animator>().SetBool("isAttacking", false);
 		}
-	}
-	
-	public void SetSpeed(float speed)
-    {
-		currentSpeed = speed;
 	}
 	
 	// Called from the animator at time of actual blow
@@ -47,9 +39,4 @@ public class Attacker : MonoBehaviour
     {
 		currentTarget = obj;
 	}
-
-    public float GetSpawnsPerSecond()
-    {
-        return seenEverySeconds;
-    }
 }

@@ -5,12 +5,12 @@ using System.Collections;
 public class Fox : MonoBehaviour {
 
 	private Animator myAnimator;
-	private Attacker attacker;
+	private Attacker myAttacker;
 
 	// Use this for initialization
 	void Start () {
 		myAnimator = GetComponent<Animator>();
-		attacker = GetComponent<Attacker>();
+		myAttacker = GetComponent<Attacker>();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +30,7 @@ public class Fox : MonoBehaviour {
 			myAnimator.SetTrigger ("jump trigger");
 		} else {
 			myAnimator.SetBool ("isAttacking", true);
-			attacker.Attack (obj);
+			myAttacker.Attack (obj);
 		}
 	}
 }
