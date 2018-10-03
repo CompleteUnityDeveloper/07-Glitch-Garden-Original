@@ -32,8 +32,6 @@ public class Lizard : MonoBehaviour
 		if (!obj.GetComponent<Defender>()) {
 			return;
 		}
-		
-		anim.SetBool ("isAttacking", true);
 		attacker.Attack (obj);
 	}
 }
