@@ -9,7 +9,8 @@ public class Shooter : MonoBehaviour {
 	Animator animator;
 	Spawner myLaneSpawner;
 	
-	void Start () {
+	void Start ()
+    {
 		animator = FindObjectOfType<Animator>();
 		
 		// Creates a parent if necessary
@@ -35,7 +36,8 @@ public class Shooter : MonoBehaviour {
 		Spawner[] spawnerArray = FindObjectsOfType<Spawner>();
 		
 		foreach (Spawner spawner in spawnerArray) {
-			if (spawner.transform.position.y == transform.position.y) {
+			if (spawner.transform.position.y == transform.position.y)
+            {
 				myLaneSpawner = spawner;
 				return;
 			}

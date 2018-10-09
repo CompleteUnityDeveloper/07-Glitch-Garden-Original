@@ -3,74 +3,33 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GameTimer : MonoBehaviour {
+    // rename class to GameSession or something similar
 
 	[SerializeField] float levelSeconds = 100;
 
 	Slider slider;
-	AudioSource audioSource;
-	bool isEndOfLevel = false;
 	LevelManager levelManager;
-	GameObject winLabel;
-    Spawner spawner;
 
-	// Use this for initialization
-	void Start () {
-		slider = GetComponent<Slider>();
-		audioSource = GetComponent<AudioSource>();
-		levelManager = FindObjectOfType<LevelManager>();
-		FindYouWin();
-		winLabel.SetActive(false);
-	}
+    bool triggeredLevelFinished = false;
 
-	void FindYouWin()
-	{
-		winLabel = GameObject.Find ("You Win");
-		if (!winLabel) {
-			Debug.LogWarning ("Please create You Win object");
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		slider.value = Time.timeSinceLevelLoad / levelSeconds;
-		
-		bool timeIsUp = (Time.timeSinceLevelLoad >= levelSeconds);
-		if (timeIsUp && !isEndOfLevel)
-        {
-            StopSpawners();
-            HandleWinCondition ();
-		}
-	}
-    // TODO: new addition, check its kewl
-    private void StopSpawners()
+    // Use this for initialization
+    void Start ()
     {
-        Spawner[] spawnerArray = FindObjectsOfType<Spawner>();
-        foreach (Spawner spawner in spawnerArray)
-        {
-            Destroy(spawner);
-        }
-    }
-
-    void HandleWinCondition ()
-	{        
-        //DestroyAllTaggedObjects();
-		audioSource.Play ();
-		winLabel.SetActive (true);
-		Invoke ("LoadNextLevel", 10f); // TODO Change Invoke to Coroutine?
-		isEndOfLevel = true;
+		slider = GetComponent<Slider>();
+		levelManager = FindObjectOfType<LevelManager>();
 	}
-	
-	// Destroys all objects with destroyOnWin tag
-    // TODO: Remove?
-	void DestroyAllTaggedObjects() {
-		GameObject[] taggedObjectArray = GameObject.FindGameObjectsWithTag ("destroyOnWin");
-		
-		foreach (GameObject taggedObject in taggedObjectArray) {
-			Destroy (taggedObject);
+
+	// Update is called once per frame
+	void Update ()
+    {
+        if (triggeredLevelFinished) { return; }
+		slider.value = Time.timeSinceLevelLoad / levelSeconds;
+
+        bool timerFinished = Time.timeSinceLevelLoad >= levelSeconds;
+        if (timerFinished)
+        {
+            levelManager.LevelTimerFinished();
+            triggeredLevelFinished = true;
 		}
 	}
-	
-	void LoadNextLevel () {
-		levelManager.LoadNextLevel();
-	}
-}
+ }

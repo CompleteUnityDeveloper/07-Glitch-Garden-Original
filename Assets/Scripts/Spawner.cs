@@ -8,11 +8,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] float maxSpawnDelay = 5f;
     [SerializeField] GameObject[] attackerPrefabArray;
 
-    [SerializeField] bool spawn;
+    bool spawn = true;
 
     IEnumerator Start()
     {
-        while (spawn == true)
+        while (spawn)
         {
             // delay before spawning
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
@@ -36,7 +36,8 @@ public class Spawner : MonoBehaviour
 	void Spawn(GameObject myGameObject)
     {
 		GameObject myAttacker = Instantiate (myGameObject) as GameObject;
-		myAttacker.transform.parent = transform;
+        // make parent the spawner's transform
+        myAttacker.transform.parent = transform;
 		myAttacker.transform.position = transform.position;
 	}
 }

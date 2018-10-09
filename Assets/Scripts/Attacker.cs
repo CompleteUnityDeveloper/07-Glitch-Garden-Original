@@ -14,9 +14,21 @@ public class Attacker : MonoBehaviour
 
     // cached references for readability
     GameObject currentTarget;
-	
-	// Update is called once per frame
-	void Update ()
+    LevelManager levelManager;
+
+    private void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.AttackerSpawned();
+    }
+
+    private void OnDestroy()
+    {
+        levelManager.AttackerKilled();
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
 		transform.Translate (Vector3.left * currentSpeed * Time.deltaTime);
 		if (!currentTarget)
