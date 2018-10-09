@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LoseCollider : MonoBehaviour {
 
-	private LevelManager levelManager;
+	LevelManager levelManager;
 
 	// Use this for initialization
 	void Start ()

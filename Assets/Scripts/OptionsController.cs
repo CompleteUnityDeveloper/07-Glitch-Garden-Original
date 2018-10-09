@@ -4,14 +4,14 @@ using System.Collections;
 
 public class OptionsController : MonoBehaviour {
 
-	public Slider volumeSlider, diffSlider;
-	public LevelManager levelManager;
+	[SerializeField] Slider volumeSlider, diffSlider;
+    [SerializeField] LevelManager levelManager;
 	
-	private MusicManager musicManager;
+	MusicManager musicManager;
 
 	// Use this for initialization
 	void Start () {
-		musicManager = GameObject.FindObjectOfType<MusicManager>();
+		musicManager = FindObjectOfType<MusicManager>();
 		volumeSlider.value = PlayerPrefsManager.GetMasterVolume ();
 		diffSlider.value = PlayerPrefsManager.GetDifficulty ();
 	}
