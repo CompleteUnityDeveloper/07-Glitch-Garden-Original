@@ -8,14 +8,21 @@ public class Spawner : MonoBehaviour
     [SerializeField] float maxSpawnDelay = 5f;
     [SerializeField] GameObject[] attackerPrefabArray;
 
+    [SerializeField] bool spawn;
+
     IEnumerator Start()
     {
-        while (true)
+        while (spawn == true)
         {
             // delay before spawning
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
             SpawnAttacker();
         }
+    }
+
+    public void StopSpawning()
+    {
+        spawn = false;
     }
 
     private void SpawnAttacker()

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	public float speed, damage;
+	[SerializeField] float speed, damage;
 	
 	// Use this for initialization
 	void Start () {

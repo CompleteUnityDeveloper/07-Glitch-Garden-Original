@@ -9,11 +9,12 @@ public class Health : MonoBehaviour {
 		health -= damage;
 		if (health < 0) {
 			// Optionally trigger animation
-			DestoryObject ();
+			DestroyObject ();
 		}
 	}
 	
-	public void DestoryObject () {
+    // TODO: Does this need to be a public method?
+	public void DestroyObject () {
 		Destroy (gameObject);
 	}
 	

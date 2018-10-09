@@ -3,11 +3,11 @@ using System.Collections;
 
 public class StopButton : MonoBehaviour {
 
-	private LevelManager levelManager;
+	LevelManager levelManager;
 	
 	// Use this for initialization
 	void Start () {
-		levelManager = GameObject.FindObjectOfType<LevelManager>();
+		levelManager = FindObjectOfType<LevelManager>();
 	}
 
 	void OnMouseDown() {

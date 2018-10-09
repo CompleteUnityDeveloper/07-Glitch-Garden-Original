@@ -3,18 +3,19 @@ using System.Collections;
 
 public class Shooter : MonoBehaviour {
 
-	public GameObject projectile, gun;
+	[SerializeField] GameObject projectile, gun;
 	
-	private GameObject projectileParent;
-	private Animator animator;
-	private Spawner myLaneSpawner;
+	GameObject projectileParent;
+	Animator animator;
+	Spawner myLaneSpawner;
 	
 	void Start () {
-		animator = GameObject.FindObjectOfType<Animator>();
+		animator = FindObjectOfType<Animator>();
 		
 		// Creates a parent if necessary
 		projectileParent = GameObject.Find ("Projectiles");
-		if (!projectileParent) {
+		if (!projectileParent)
+        {
 			projectileParent = new GameObject("Projectiles");
 		}
 		
@@ -31,7 +32,7 @@ public class Shooter : MonoBehaviour {
 	
 	// Look through all spawners, and set myLaneSpanwer if found
 	void SetMyLaneSpawner () {
-		Spawner[] spawnerArray = GameObject.FindObjectsOfType<Spawner>();
+		Spawner[] spawnerArray = FindObjectsOfType<Spawner>();
 		
 		foreach (Spawner spawner in spawnerArray) {
 			if (spawner.transform.position.y == transform.position.y) {
