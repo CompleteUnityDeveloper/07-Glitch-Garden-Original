@@ -6,9 +6,9 @@ public class LevelManager : MonoBehaviour {
 
     // break out into LevelLoader (loading stuff) and LevelSession (win criteria stuff)
 
-	[SerializeField] float autoLoadNextLevelAfter;
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
+    [SerializeField] float waitToLoad = 3f;
 
     AudioSource audioSource;
     GameObject winLabel;
@@ -23,8 +23,16 @@ public class LevelManager : MonoBehaviour {
         numberOfAttackers--;
         if (numberOfAttackers <= 0 && levelTimerFinished)
         {
-            HandleWinCondition();
+            StartCoroutine(HandleWinCondition());
         }
+    }
+
+    IEnumerator HandleWinCondition()
+    {
+        audioSource.Play();
+        winLabel.SetActive(true);
+        yield return new WaitForSeconds(waitToLoad);
+        FindObjectOfType<LevelLoader>().LoadNextScene();
     }
 
     public void LevelTimerFinished()
@@ -37,16 +45,6 @@ public class LevelManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         FindYouWin();
         winLabel.SetActive(false);
-        
-        // TODO: Deal with all the loading crazies
-        if (autoLoadNextLevelAfter <= 0)
-        {
-			Debug.Log ("Level auto load disabled, use a postive number is seconds");
-		}
-        else
-        {
-			Invoke ("LoadNextLevel", autoLoadNextLevelAfter);
-		}
 	}
 
     void FindYouWin()
@@ -66,34 +64,4 @@ public class LevelManager : MonoBehaviour {
             spawner.StopSpawning();
         }
     }
-
-    void HandleWinCondition()
-    {
-        audioSource.Play();
-        winLabel.SetActive(true);
-        // LoadNextLevel
-    }
-
-    public void LoadLevel(string name)
-    {
-        Debug.Log("New Level load: " + name);
-        SceneManager.LoadScene(name);
-    }
-
-    public void QuitRequest()
-    {
-        Debug.Log("Quit requested");
-        Application.Quit();
-    }
-
-    public void LoadNextLevel()
-    {
-        SceneManager.LoadScene(Application.loadedLevel + 1);
-    }
-
-    //void LoadNextLevel()
-    //{
-    //    levelManager.LoadNextLevel();
-    //}
-    
 }

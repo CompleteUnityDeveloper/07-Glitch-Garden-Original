@@ -4,17 +4,24 @@ using System.Collections;
 public class Health : MonoBehaviour {
 	
 	public float health = 100f;
-	
-	public void DealDamage (float damage) {
+    [SerializeField] GameObject hitVFX;
+
+    public void DealDamage (float damage) {
 		health -= damage;
 		if (health < 0) {
-			// Optionally trigger animation
+            TriggerHitVFX();
 			DestroyObject ();
 		}
 	}
-	
+
+    private void TriggerHitVFX()
+    {
+        GameObject hitImpactVFX = Instantiate(hitVFX, transform.position, transform.rotation);
+        // Destroy(hitVFX, 1f);
+    }
+
     // TODO: Does this need to be a public method?
-	public void DestroyObject () {
+    public void DestroyObject () {
 		Destroy (gameObject);
 	}
 	

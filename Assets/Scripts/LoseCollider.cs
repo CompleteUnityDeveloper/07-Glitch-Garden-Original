@@ -13,6 +13,6 @@ public class LoseCollider : MonoBehaviour {
 	
 	void OnTriggerEnter2D ()
     {
-		levelManager.LoadLevel ("03b Lose");
+		//levelManager.LoadLevel ("03b Lose");
 	}
 }

@@ -7,17 +7,26 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/_Scenes/00 Splash.unity
+    guid: 21ce56ac4a4d8452f9e40ac250eb94c1
   - enabled: 1
     path: Assets/_Scenes/01a Start.unity
+    guid: a692638f4377e44b3aff6679c3a2e7a3
   - enabled: 1
     path: Assets/_Scenes/01b Options.unity
+    guid: 32dd43f2e204642789d4fd56b6be8573
   - enabled: 1
     path: Assets/_Scenes/02 Level_01.unity
-  - enabled: 1
-    path: Assets/_Scenes/02 Level_02.unity
+    guid: a95af51b985784ffaa52417e66bdc275
   - enabled: 1
     path: Assets/_Scenes/02 Level_03.unity
+    guid: 2f538ef20c3104f488436b77ec3ef02e
+  - enabled: 1
+    path: Assets/_Scenes/02 Level_02.unity
+    guid: 719927c99eedc43cfbb173a75a010ea1
   - enabled: 1
     path: Assets/_Scenes/03a Win.unity
+    guid: 04c0330bcf5e4476ead73f8532be331b
   - enabled: 1
     path: Assets/_Scenes/03b Lose.unity
+    guid: d6877206d171f48c4a731839b28a821b
+  m_configObjects: {}

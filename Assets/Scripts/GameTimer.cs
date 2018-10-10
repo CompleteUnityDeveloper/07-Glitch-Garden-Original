@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GameTimer : MonoBehaviour {
-    // rename class to GameSession or something similar
-
+    
 	[SerializeField] float levelSeconds = 100;
 
 	Slider slider;
