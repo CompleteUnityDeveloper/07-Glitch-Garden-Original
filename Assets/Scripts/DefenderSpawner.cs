@@ -11,7 +11,6 @@ public class DefenderSpawner : MonoBehaviour
 
     private GameObject parent;
 
-    // messages, then public methods, then private methods...
 	void Start ()
     {
         CreateDefenderParent();

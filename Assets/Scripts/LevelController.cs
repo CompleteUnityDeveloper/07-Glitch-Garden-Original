@@ -2,9 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour {
-
-    // break out into LevelLoader (loading stuff) and LevelSession (win criteria stuff)
+public class LevelController : MonoBehaviour {
 
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
@@ -12,6 +10,13 @@ public class LevelManager : MonoBehaviour {
 
     AudioSource audioSource;
     GameObject winLabel;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        FindYouWin();
+        winLabel.SetActive(false);
+    }
 
     public void AttackerSpawned()
     {
@@ -41,13 +46,7 @@ public class LevelManager : MonoBehaviour {
         StopSpawners();
     }
 
-    void Start () {
-        audioSource = GetComponent<AudioSource>();
-        FindYouWin();
-        winLabel.SetActive(false);
-	}
-
-    void FindYouWin()
+     void FindYouWin()
     {
         winLabel = GameObject.FindWithTag("WinMessageOverlay");
         if (!winLabel)

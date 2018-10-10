@@ -14,11 +14,11 @@ public class Attacker : MonoBehaviour
 
     // cached references for readability
     GameObject currentTarget;
-    LevelManager levelManager;
+    LevelController levelManager;
 
     private void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
+        levelManager = FindObjectOfType<LevelController>();
         levelManager.AttackerSpawned();
     }
 

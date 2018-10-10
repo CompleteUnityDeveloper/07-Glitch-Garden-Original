@@ -12,9 +12,14 @@ public class LevelLoader : MonoBehaviour {
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
-    public void LoadStartScene()
+    public void LoadStartMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadYouLose()
+    {
+        SceneManager.LoadScene("03b Lose");
     }
 
     public void QuitGame()

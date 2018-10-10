@@ -3,16 +3,9 @@ using System.Collections;
 
 public class LoseCollider : MonoBehaviour {
 
-	LevelManager levelManager;
 
-	// Use this for initialization
-	void Start ()
+    void OnTriggerEnter2D ()
     {
-		levelManager = FindObjectOfType<LevelManager>();
-	}
-	
-	void OnTriggerEnter2D ()
-    {
-		//levelManager.LoadLevel ("03b Lose");
+        FindObjectOfType<LevelLoader>().LoadYouLose();
 	}
 }

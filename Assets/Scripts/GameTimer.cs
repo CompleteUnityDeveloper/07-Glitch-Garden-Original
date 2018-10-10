@@ -7,7 +7,7 @@ public class GameTimer : MonoBehaviour {
 	[SerializeField] float levelSeconds = 100;
 
 	Slider slider;
-	LevelManager levelManager;
+	LevelController levelManager;
 
     bool triggeredLevelFinished = false;
 
@@ -15,7 +15,7 @@ public class GameTimer : MonoBehaviour {
     void Start ()
     {
 		slider = GetComponent<Slider>();
-		levelManager = FindObjectOfType<LevelManager>();
+		levelManager = FindObjectOfType<LevelController>();
 	}
 
 	// Update is called once per frame

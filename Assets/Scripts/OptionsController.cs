@@ -5,7 +5,7 @@ using System.Collections;
 public class OptionsController : MonoBehaviour {
 
 	[SerializeField] Slider volumeSlider, diffSlider;
-    [SerializeField] LevelManager levelManager;
+    [SerializeField] LevelController levelManager;
 	
 	MusicManager musicManager;
 

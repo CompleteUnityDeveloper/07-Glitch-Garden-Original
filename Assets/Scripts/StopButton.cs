@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StopButton : MonoBehaviour {
 
-	LevelManager levelManager;
+	LevelLoader levelLoader;
 	
 	// Use this for initialization
 	void Start () {
-		levelManager = FindObjectOfType<LevelManager>();
+		levelLoader = FindObjectOfType<LevelLoader>();
 	}
 
 	void OnMouseDown() {
-		//levelManager.LoadLevel ("01a Start");
+		levelLoader.LoadStartMenu();
 	}
 }
