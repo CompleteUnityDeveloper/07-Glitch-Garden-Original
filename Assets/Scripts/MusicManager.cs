@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MusicManager : MonoBehaviour {
-
+public class MusicManager : MonoBehaviour
+{
 	public AudioClip[] levelMusicChangeArray;
 
 	private AudioSource audioSource;
 
-	void Awake() {
+	void Awake()
+    {
 		DontDestroyOnLoad (gameObject);
 		Debug.Log ("Don't destory on load: " + name);
 	}
 	
-	void Start () {
+	void Start ()
+    {
 		audioSource = GetComponent<AudioSource>();
 		audioSource.volume = PlayerPrefsManager.GetMasterVolume();
 	}
