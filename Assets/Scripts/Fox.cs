@@ -13,5 +13,3 @@ public class Fox : MonoBehaviour
         }
 	}
 }
-
-// Ben OK
