@@ -16,13 +16,13 @@ public class Attacker : MonoBehaviour
     GameObject currentTarget;
     LevelController levelController;
 
-    private void Start()
+    void Start()
     {
         levelController = FindObjectOfType<LevelController>();
         levelController.AttackerSpawned();
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
         levelController.AttackerKilled();
     }
@@ -37,6 +37,16 @@ public class Attacker : MonoBehaviour
 		}
 	}
 	
+    void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        GameObject otherObject = otherCollider.gameObject;
+
+        if (otherObject.GetComponent<Defender>())
+        {
+            Attack(otherObject);
+        }
+    }
+
 	public void SetSpeed(float speed)
     {
 		currentSpeed = speed;
