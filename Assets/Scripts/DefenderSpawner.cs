@@ -3,14 +3,19 @@ using System.Collections;
 
 public class DefenderSpawner : MonoBehaviour
 {
-    GameObject selectedDefender;
-
-    const string DEFENDER_NAME = "Defenders";
-
+    // PARAMETERS - for tuning, typically set in the editor
     [SerializeField] AudioClip noDefenderSelected;
 
+    // CACHE - e.g. references for readability
     private GameObject parent;
 
+    // STATE - private instance (member) variables
+    GameObject selectedDefender;
+
+    // CONSTANTS - compile
+    const string DEFENDER_NAME = "Defenders";
+
+    // messages, then public methods, then private methods...
 	void Start ()
     {
         CreateDefenderParent();

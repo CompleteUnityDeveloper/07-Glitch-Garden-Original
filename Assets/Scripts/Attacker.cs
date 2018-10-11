@@ -14,17 +14,17 @@ public class Attacker : MonoBehaviour
 
     // cached references for readability
     GameObject currentTarget;
-    LevelController levelManager;
+    LevelController levelController;
 
     private void Start()
     {
-        levelManager = FindObjectOfType<LevelController>();
-        levelManager.AttackerSpawned();
+        levelController = FindObjectOfType<LevelController>();
+        levelController.AttackerSpawned();
     }
 
     private void OnDestroy()
     {
-        levelManager.AttackerKilled();
+        levelController.AttackerKilled();
     }
 
     // Update is called once per frame
