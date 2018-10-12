@@ -11,7 +11,8 @@ public class StarDisplay : MonoBehaviour {
     public enum Status {SUCCESS, FAILURE};
     
 
-	void Start () {
+	void Start ()
+    {
 		starText = GetComponent <Text>();
 		UpdateDisplay();
 	}
@@ -21,7 +22,8 @@ public class StarDisplay : MonoBehaviour {
 		UpdateDisplay();
 	}
 	
-	public Status UseStars (int amount) {
+	public Status UseStars (int amount)
+    {
 		if (stars >= amount) {
 			stars -= amount;
 			UpdateDisplay();
@@ -30,7 +32,8 @@ public class StarDisplay : MonoBehaviour {
 		return Status.FAILURE;
 	}
 	
-	private void UpdateDisplay () {
+	private void UpdateDisplay ()
+    {
 		starText.text =stars.ToString();
 	}
 	

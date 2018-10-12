@@ -3,8 +3,9 @@ using System.Collections;
 
 public class MusicManager : MonoBehaviour
 {
-	public AudioClip[] levelMusicChangeArray;
+    // Rick's notes: Yet to work on this script.
 
+    public AudioClip[] levelMusicChangeArray;
 	private AudioSource audioSource;
 
 	void Awake()
@@ -19,7 +20,8 @@ public class MusicManager : MonoBehaviour
 		audioSource.volume = PlayerPrefsManager.GetMasterVolume();
 	}
 	
-	void OnLevelWasLoaded (int level) {
+	void OnLevelWasLoaded (int level)
+    {
 		AudioClip thisLevelMusic = levelMusicChangeArray[level];
 		Debug.Log ("Playing clip: " + thisLevelMusic);
 		
@@ -30,7 +32,8 @@ public class MusicManager : MonoBehaviour
 		}
 	}
 	
-	public void SetVolume (float volume) {
+	public void SetVolume (float volume)
+    {
 		audioSource.volume = volume;
 	}
 }

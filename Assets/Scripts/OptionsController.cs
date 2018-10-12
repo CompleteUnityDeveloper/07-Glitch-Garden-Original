@@ -4,31 +4,34 @@ using System.Collections;
 
 public class OptionsController : MonoBehaviour {
 
-	[SerializeField] Slider volumeSlider, diffSlider;
-    [SerializeField] LevelController levelManager;
-	
-	MusicManager musicManager;
+	[SerializeField] Slider volumeSlider;
+    [SerializeField] Slider diffSlider;
+    [SerializeField] float defaultVolume = 0.8f;
+    [SerializeField] float defaultDifficulty = 2f;
 
-	// Use this for initialization
-	void Start () {
-		musicManager = FindObjectOfType<MusicManager>();
+    MusicManager musicManager;
+
+	void Start ()
+    {
 		volumeSlider.value = PlayerPrefsManager.GetMasterVolume ();
 		diffSlider.value = PlayerPrefsManager.GetDifficulty ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	 
+	void Update ()
+    {
 		musicManager.SetVolume (volumeSlider.value);
 	}
 	
-	public void SaveAndExit () {
+	public void SaveAndExit ()
+    {
 		PlayerPrefsManager.SetMasterVolume (volumeSlider.value);
 		PlayerPrefsManager.SetDifficulty (diffSlider.value);
-		//levelManager.LoadLevel ("01a Start");
+		FindObjectOfType<LevelLoader>().StartGame();
 	}
 	
-	public void SetDefaults () {
-		volumeSlider.value = 0.8f;
-		diffSlider.value = 2f;
+	public void SetDefaults ()
+    {
+		volumeSlider.value = defaultVolume;
+		diffSlider.value = defaultDifficulty;
 	}
 }
