@@ -4,16 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour {
 
-    int numberOfAttackers = 0;
-    bool levelTimerFinished = false;
     [SerializeField] float waitToLoad = 3f;
-
-    AudioSource audioSource;
     GameObject winLabel;
+    bool levelTimerFinished = false;
+    int numberOfAttackers = 0;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         FindYouWin();
         winLabel.SetActive(false);
     }
@@ -34,7 +31,7 @@ public class LevelController : MonoBehaviour {
 
     IEnumerator HandleWinCondition()
     {
-        audioSource.Play();
+        GetComponent<AudioSource>().Play();
         winLabel.SetActive(true);
         yield return new WaitForSeconds(waitToLoad);
         FindObjectOfType<LevelLoader>().LoadNextScene();
@@ -51,7 +48,7 @@ public class LevelController : MonoBehaviour {
         winLabel = GameObject.FindWithTag("WinMessageOverlay");
         if (!winLabel)
         {
-            Debug.LogWarning("Please create You Win object");
+            Debug.LogWarning("Please create a You Win object");
         }
     }
 

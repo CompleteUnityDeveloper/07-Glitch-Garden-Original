@@ -2,26 +2,28 @@
 using System.Collections;
 
 public class Health : MonoBehaviour {
-	
-	public float health = 100f;
-    [SerializeField] GameObject hitVFX;
 
-    public void DealDamage (float damage) {
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float health = 100f;
+
+    public void DealDamage (float damage)
+    {
 		health -= damage;
-		if (health < 0) {
-            TriggerHitVFX();
+		if (health < 0)
+        {
+            TriggerDeathVFX();
 			DestroyObject ();
 		}
 	}
 
-    private void TriggerHitVFX()
+    private void TriggerDeathVFX()
     {
-        GameObject hitImpactVFX = Instantiate(hitVFX, transform.position, transform.rotation);
-        // Destroy(hitVFX, 1f);
+        GameObject deathVFXObject = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(deathVFXObject, 1f);
     }
 
-    // TODO: Does this need to be a public method?
-    public void DestroyObject () {
+    private void DestroyObject ()
+    {
 		Destroy (gameObject);
 	}
 	

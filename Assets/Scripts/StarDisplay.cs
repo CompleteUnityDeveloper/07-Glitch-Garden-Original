@@ -5,11 +5,12 @@ using System.Collections;
 [RequireComponent (typeof(Text))]
 public class StarDisplay : MonoBehaviour {
 
-	private Text starText;
-	private int stars = 100;
-	public enum Status {SUCCESS, FAILURE};
+	Text starText;
+	int stars = 100;
+    // TODO Remove public enum
+    public enum Status {SUCCESS, FAILURE};
+    
 
-	// Use this for initialization
 	void Start () {
 		starText = GetComponent <Text>();
 		UpdateDisplay();

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour {
 
-    int currentSceneIndex;
     [SerializeField] int waitInSeconds = 2;
+    int currentSceneIndex;
 
     void Start()
     {

@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Shreddder : MonoBehaviour {
 
-	void OnTriggerEnter2D (Collider2D collider) {
-		Destroy (collider.gameObject);	
+	void OnTriggerEnter2D (Collider2D otherCollider)
+    {
+		Destroy (otherCollider.gameObject);	
 	}
 	
 }

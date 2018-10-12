@@ -4,13 +4,10 @@ using System.Collections;
 public class DefenderSpawner : MonoBehaviour
 {
     [SerializeField] AudioClip noDefenderSelected;
-
-    private GameObject parent;
+    GameObject parent;
     GameObject selectedDefender;
-
     const string DEFENDER_NAME = "Defenders";
 
-    // messages, then public methods, then private methods...
 	void Start ()
     {
         CreateDefenderParent();
@@ -30,6 +27,7 @@ public class DefenderSpawner : MonoBehaviour
         }
     }
 
+    // TODO - Ben, lets have a look at this big old method together
     void OnMouseDown()
     {
         Vector2 clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);

@@ -3,23 +3,21 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	[SerializeField] float speed, damage;
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    [SerializeField] float speed = 1f;
+    [SerializeField] float damage = 10f;
+
+	void Update ()
+    {
 		transform.Translate (Vector3.right * speed * Time.deltaTime);
 	}
 
-	void OnTriggerEnter2D (Collider2D collider) {
-		Attacker attacker = collider.gameObject.GetComponent<Attacker>();
-		Health health = collider.gameObject.GetComponent<Health>();
+	void OnTriggerEnter2D (Collider2D otherCollider)
+    {
+		var attacker = otherCollider.gameObject.GetComponent<Attacker>();
+		var health = otherCollider.gameObject.GetComponent<Health>();
 		
-		if (attacker && health) {
+		if (attacker && health)
+        {
 			health.DealDamage (damage);
 			Destroy (gameObject);
 		}
