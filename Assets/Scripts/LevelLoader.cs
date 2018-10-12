@@ -6,20 +6,42 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour {
 
+    int currentSceneIndex;
+    [SerializeField] int waitInSeconds = 2;
+
+    void Start()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex == 0)
+        {
+            StartCoroutine(WaitForSeconds());
+        }
+    }
+
+    IEnumerator WaitForSeconds()
+    {
+        yield return new WaitForSeconds(waitInSeconds);
+        LoadNextScene();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
+
     public void LoadNextScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     public void LoadStartMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Start Screen");
     }
 
     public void LoadYouLose()
     {
-        SceneManager.LoadScene("03b Lose");
+        SceneManager.LoadScene("Lose Screen");
     }
 
     public void QuitGame()

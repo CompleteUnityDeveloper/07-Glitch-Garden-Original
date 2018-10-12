@@ -4,14 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class StopButton : MonoBehaviour {
 
-	LevelLoader levelLoader;
-	
-	// Use this for initialization
-	void Start () {
-		levelLoader = FindObjectOfType<LevelLoader>();
-	}
-
-	void OnMouseDown() {
-		levelLoader.LoadStartMenu();
+	void OnMouseDown()
+    {
+        FindObjectOfType<LevelLoader>().LoadStartMenu();
 	}
 }

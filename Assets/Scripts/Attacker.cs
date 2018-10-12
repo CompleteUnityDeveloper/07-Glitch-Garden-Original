@@ -65,10 +65,10 @@ public class Attacker : MonoBehaviour
 		}
 	}
 	
-	public void Attack(GameObject obj)
+	public void Attack(GameObject target)
     {
         GetComponent<Animator>().SetBool("isAttacking", true);
-        currentTarget = obj;
+        currentTarget = target;
 	}
 
     public float GetSpawnsPerSecond()
