@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[SelectionBase]
 public class Defender : MonoBehaviour
 {	
     [SerializeField] int starCost = 100;

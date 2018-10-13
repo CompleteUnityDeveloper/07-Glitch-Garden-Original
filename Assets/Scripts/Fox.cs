@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-[RequireComponent (typeof (Attacker))]
+[RequireComponent(typeof(Attacker))]
 public class Fox : MonoBehaviour
 {
-    void OnTriggerEnter2D (Collider2D otherCollider)
+    void OnTriggerEnter2D(Collider2D otherCollider)
     {
         GameObject otherObject = otherCollider.gameObject;
 
@@ -11,5 +11,9 @@ public class Fox : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("jump trigger");
         }
-	}
+        else if (otherObject.GetComponent<Defender>())
+        {
+            GetComponent<Attacker>().Attack(otherObject);
+        }
+    }
 }
