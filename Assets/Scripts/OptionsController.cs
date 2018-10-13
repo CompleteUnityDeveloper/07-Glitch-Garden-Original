@@ -13,8 +13,8 @@ public class OptionsController : MonoBehaviour {
 
 	void Start ()
     {
-		volumeSlider.value = PlayerPrefsManager.GetMasterVolume ();
-		diffSlider.value = PlayerPrefsManager.GetDifficulty ();
+		volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
+		diffSlider.value = PlayerPrefsManager.GetDifficulty();
 	}
 	 
 	void Update ()
@@ -25,7 +25,7 @@ public class OptionsController : MonoBehaviour {
 	public void SaveAndExit ()
     {
 		PlayerPrefsManager.SetMasterVolume (volumeSlider.value);
-		PlayerPrefsManager.SetDifficulty (diffSlider.value);
+		PlayerPrefsManager.SetDifficulty(diffSlider.value);
 		FindObjectOfType<LevelLoader>().StartGame();
 	}
 	

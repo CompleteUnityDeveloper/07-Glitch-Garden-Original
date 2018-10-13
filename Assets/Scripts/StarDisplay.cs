@@ -9,7 +9,6 @@ public class StarDisplay : MonoBehaviour {
 	int stars = 100;
     // TODO Remove public enum
     public enum Status {SUCCESS, FAILURE};
-    
 
 	void Start ()
     {
@@ -24,7 +23,8 @@ public class StarDisplay : MonoBehaviour {
 	
 	public Status UseStars (int amount)
     {
-		if (stars >= amount) {
+		if (stars >= amount)
+        {
 			stars -= amount;
 			UpdateDisplay();
 			return Status.SUCCESS;

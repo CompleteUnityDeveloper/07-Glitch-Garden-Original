@@ -1,16 +1,24 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class PlayerPrefsManager : MonoBehaviour {
+public class PlayerPrefsManager : MonoBehaviour
+{
+    #region AllPrefs 
+    const string MASTER_VOLUME_KEY = "master_volume";
+	const string DIFFICULTY_KEY = "difficulty"; // TODO use?
+    #endregion
 
-	const string MASTER_VOLUME_KEY = "master_volume";
-	const string DIFFICULTY_KEY = "difficulty";
-	const string LEVEL_KEY = "level_unlocked_";
+    const float MIN_DIFFICULTY = 1f;
+    const float MAX_DIFFICULTY = 3f;
+    const float MIN_VOLUME = 1f;
+    const float MAX_VOLUME = 3f;
 
-	public static void SetMasterVolume (float volume)
+    public static void SetMasterVolume(float volume)
     {
-		if (volume >= 0f && volume <= 1f) {
-			PlayerPrefs.SetFloat (MASTER_VOLUME_KEY, volume);
+        if (volume >= MIN_VOLUME && volume <= MAX_VOLUME) // check valid range
+        {
+            PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
 		}
         else
         {
@@ -20,40 +28,12 @@ public class PlayerPrefsManager : MonoBehaviour {
 	
 	public static float GetMasterVolume()
     {
-		return PlayerPrefs.GetFloat (MASTER_VOLUME_KEY);
-	}
-	
-	public static void UnlockLevel (int level)
-    {
-		if (level <= Application.levelCount - 1)
-        {
-			PlayerPrefs.SetInt (LEVEL_KEY + level.ToString(), 1); // Use 1 for true
-		}
-        else
-        {
-			Debug.LogError ("Trying to unlock level not in build order");
-		}
-	}
-	
-	public static bool IsLevelUnlocked (int level)
-    {
-		int levelValue = PlayerPrefs.GetInt (LEVEL_KEY + level.ToString());
-		bool isLevelUnlocked = (levelValue == 1);		
-
-		if (level <= Application.levelCount - 1)
-        {
-			return isLevelUnlocked;
-		}
-        else
-        {
-			Debug.LogError ("Trying to query level not in build order");
-			return false;
-		}
+        return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
 	}
 	
 	public static void SetDifficulty (float difficulty)
     {
-		if (difficulty >= 1f && difficulty <= 3f) {
+        if (difficulty >= MIN_DIFFICULTY && difficulty <= MAX_DIFFICULTY) {
 			PlayerPrefs.SetFloat (DIFFICULTY_KEY, difficulty);
 		}
         else

@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfda3fe4174f410ebf26f7a09cf9f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defenderPrefab: {fileID: 132766, guid: 78e28c05c1b66419db6d12f90d173661, type: 2}
+  defenderPrefab: {fileID: 11414790, guid: 78e28c05c1b66419db6d12f90d173661, type: 2}
 --- !u!114 &11440870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfda3fe4174f410ebf26f7a09cf9f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defenderPrefab: {fileID: 135692, guid: 8d2066ec7fede4a8387927e8df631e60, type: 2}
+  defenderPrefab: {fileID: 11469432, guid: 8d2066ec7fede4a8387927e8df631e60, type: 2}
 --- !u!114 &11440872
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// TODO USE ANIMATOR
 public class FadeIn : MonoBehaviour
 {
 	public float fadeInTime;

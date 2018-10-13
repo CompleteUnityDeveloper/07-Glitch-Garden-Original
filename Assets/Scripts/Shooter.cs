@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shooter : MonoBehaviour {
-
+public class Shooter : MonoBehaviour
+{
 	[SerializeField] GameObject projectile, gun;
 	
 	GameObject projectileParent;
@@ -35,8 +35,10 @@ public class Shooter : MonoBehaviour {
 	void SetMyLaneSpawner () {
 		Spawner[] spawnerArray = FindObjectsOfType<Spawner>();
 		
-		foreach (Spawner spawner in spawnerArray) {
-			if (spawner.transform.position.y == transform.position.y)
+		foreach (Spawner spawner in spawnerArray)
+        {
+            bool isCloseEnough = (spawner.transform.position.y - transform.position.y <= Mathf.Epsilon);
+            if (isCloseEnough)
             {
 				myLaneSpawner = spawner;
 				return;
