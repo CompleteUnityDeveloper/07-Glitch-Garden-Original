@@ -5,7 +5,7 @@ public class DefenderSpawner : MonoBehaviour
 {
     [SerializeField] AudioClip noDefenderSelected;
     GameObject parent;
-    GameObject selectedDefender;
+    Defender selectedDefender;
     const string DEFENDER_NAME = "Defenders";
 
 	void Start ()
@@ -13,7 +13,7 @@ public class DefenderSpawner : MonoBehaviour
         CreateDefenderParent();
     }
 
-    public void SetSelectedDefender(GameObject defenderToSelect)
+    public void SetSelectedDefender(Defender defenderToSelect)
     {
         selectedDefender = defenderToSelect;
     }
@@ -34,7 +34,7 @@ public class DefenderSpawner : MonoBehaviour
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
         Vector2 gridPos = SnapToGrid(worldPos);
 
-		GameObject defender = selectedDefender;
+		Defender defender = selectedDefender;
         if (defender == null)
         {
             Debug.LogWarning("No defender selected");
@@ -42,11 +42,11 @@ public class DefenderSpawner : MonoBehaviour
             return;
         }
 		
-		int defenderCost = defender.GetComponent<Defender>().GetStarCost();
+		int defenderCost = defender.GetStarCost();
         var starDisplay = FindObjectOfType<StarDisplay>();
 		if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS)
         {
-			SpawnDefender(gridPos, defender);
+			SpawnDefender(gridPos, defender.gameObject);
 		}
         else
         {
