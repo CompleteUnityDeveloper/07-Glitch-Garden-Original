@@ -12,19 +12,14 @@ public class Health : MonoBehaviour {
 		if (health < 0)
         {
             TriggerDeathVFX();
-			DestroyObject ();
+            Destroy(gameObject);
 		}
 	}
 
     private void TriggerDeathVFX()
     {
+        if (!deathVFX) { return; }
         GameObject deathVFXObject = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(deathVFXObject, 1f);
     }
-
-    private void DestroyObject ()
-    {
-		Destroy (gameObject);
-	}
-	
 }

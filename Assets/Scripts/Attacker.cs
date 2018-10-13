@@ -30,13 +30,13 @@ public class Attacker : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		transform.Translate (Vector3.left * currentSpeed * Time.deltaTime);
-		if (!currentTarget)
+        MoveAtCurrentSpeed();
+        if (!currentTarget)
         {
             GetComponent<Animator>().SetBool("isAttacking", false);
-		}
-	}
-	
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D otherCollider)
     {
         GameObject otherObject = otherCollider.gameObject;
@@ -47,11 +47,11 @@ public class Attacker : MonoBehaviour
         }
     }
 
-	public void SetSpeed(float speed)
+    public void SetSpeed(float speed)
     {
-		currentSpeed = speed;
-	}
-	
+        currentSpeed = speed;
+    }
+
 	// Called from the animator at time of actual blow
 	public void StrikeCurrentTarget(float damage)
     {
@@ -74,5 +74,10 @@ public class Attacker : MonoBehaviour
     public float GetSpawnsPerSecond()
     {
         return seenEverySeconds;
+    }
+
+    private void MoveAtCurrentSpeed()
+    {
+        transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
     }
 }
