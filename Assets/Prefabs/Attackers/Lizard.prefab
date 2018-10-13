@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 5028912}
   - component: {fileID: 11469580}
   - component: {fileID: 11415984}
+  - component: {fileID: 114173347342022886}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: destroyOnWin
@@ -150,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a05235cea1343b9a049cf174cebe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seenEverySeconds: 0
 --- !u!212 &21239278
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -208,3 +208,14 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139280}
   m_IsPrefabAsset: 1
+--- !u!114 &114173347342022886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b12080fbf384721b1db5366b8cb861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

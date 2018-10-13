@@ -1,36 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof (Rigidbody2D))]
 public class Attacker : MonoBehaviour
 {
-    // configuration parameters, consider SO
-    [Range(1f, 10f)]
-    [Tooltip("Average number of seconds between appearances")]
-    [SerializeField] float seenEverySeconds;
-
-    // private instance variables for state
+    #region state
     float currentSpeed;
-
-    // cached references for readability
-    GameObject currentTarget;
-    LevelController levelController;
+    GameObject currentTarget; // target one at a time
+    #endregion
 
     void Start()
     {
-        levelController = FindObjectOfType<LevelController>();
-        levelController.AttackerSpawned();
+        FindObjectOfType<LevelController>().AttackerSpawned();
     }
 
     void OnDestroy()
     {
-        levelController.AttackerKilled();
+        FindObjectOfType<LevelController>().AttackerKilled();
     }
 
     // Update is called once per frame
     void Update ()
     {
-        transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
+        transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
+        UpdateAnimationState();
+    }
+
+    private void UpdateAnimationState()
+    {
         if (!currentTarget)
         {
             GetComponent<Animator>().SetBool("isAttacking", false);
@@ -45,13 +41,12 @@ public class Attacker : MonoBehaviour
 	// Called from the animator at time of actual blow
 	public void StrikeCurrentTarget(float damage)
     {
-		if (currentTarget)
+        if (!currentTarget) { return; }
+
+		Health health = currentTarget.GetComponent<Health>();
+        if (health)
         {
-			Health health = currentTarget.GetComponent<Health>();
-            if (currentTarget.GetComponent<Health>())
-            {
-				health.DealDamage (damage);
-			}
+			health.DealDamage (damage);
 		}
 	}
 	
@@ -60,9 +55,4 @@ public class Attacker : MonoBehaviour
         GetComponent<Animator>().SetBool("isAttacking", true);
         currentTarget = target;
 	}
-
-    public float GetSpawnsPerSecond()
-    {
-        return seenEverySeconds;
-    }
 }
