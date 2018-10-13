@@ -53,7 +53,7 @@ public class Attacker : MonoBehaviour
 	}
 	
 	// Called from the animator at time of actual blow
-	public void  StrikeCurrentTarget(float damage)
+	public void StrikeCurrentTarget(float damage)
     {
 		if (currentTarget)
         {
