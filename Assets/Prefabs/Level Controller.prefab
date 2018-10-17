@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitToLoad: 3
+  winLabel: {fileID: 107344, guid: e2114952e48a845cd86a564a272f1cd9, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -160,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80d290b2f10a664f8fc108c0caca459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitInSeconds: 2

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour {
 
     [SerializeField] float waitToLoad = 3f;
-    GameObject winLabel;
+    [SerializeField] GameObject winLabel;
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
 
