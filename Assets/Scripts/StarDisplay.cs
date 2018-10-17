@@ -3,12 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent (typeof(Text))]
-public class StarDisplay : MonoBehaviour {
-
+public class StarDisplay : MonoBehaviour
+{
 	Text starText;
 	int stars = 100;
-    // TODO Remove public enum
-    public enum Status {SUCCESS, FAILURE};
 
 	void Start ()
     {
@@ -21,15 +19,18 @@ public class StarDisplay : MonoBehaviour {
 		UpdateDisplay();
 	}
 	
-	public Status UseStars (int amount)
+	public bool HaveEnoughStars(int amount)
+	{
+		return stars >= amount;
+	}
+
+	public void SpendStars (int amount)
     {
 		if (stars >= amount)
         {
 			stars -= amount;
 			UpdateDisplay();
-			return Status.SUCCESS;
 		}
-		return Status.FAILURE;
 	}
 	
 	private void UpdateDisplay ()

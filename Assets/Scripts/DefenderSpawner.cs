@@ -47,9 +47,10 @@ public class DefenderSpawner : MonoBehaviour
     {
         int defenderCost = selectedDefender.GetStarCost();
         var starDisplay = FindObjectOfType<StarDisplay>();
-        if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS)
+        if (starDisplay.HaveEnoughStars(defenderCost))
         {
             SpawnDefender(gridPos, selectedDefender.gameObject);
+            starDisplay.SpendStars(defenderCost);
         }
         else
         {
