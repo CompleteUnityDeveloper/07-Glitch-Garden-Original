@@ -13,7 +13,7 @@ public class DefenderSpawner : MonoBehaviour
         CreateDefenderParent();
     }
 
-    public void SetSelectedDefender(Defender defenderToSelect)
+    public void SetSelectedDefender(Defender defenderToSelect) // From UI
     {
         selectedDefender = defenderToSelect;
     }
@@ -27,32 +27,43 @@ public class DefenderSpawner : MonoBehaviour
         }
     }
 
-    // TODO - Ben, lets have a look at this big old method together
     void OnMouseDown()
     {
-        Vector2 clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
-        Vector2 gridPos = SnapToGrid(worldPos);
+        PlaySoundIfNoSelectedDefender();
+        AttemptToPlaceDefenderAt(GetGridSquareClicked());
+    }
 
-		Defender defender = selectedDefender;
-        if (defender == null)
+    private void PlaySoundIfNoSelectedDefender()
+    {
+        if (selectedDefender == null)
         {
             Debug.LogWarning("No defender selected");
             AudioSource.PlayClipAtPoint(noDefenderSelected, transform.position);
             return;
         }
-		
-		int defenderCost = defender.GetStarCost();
+    }
+
+    private void AttemptToPlaceDefenderAt(Vector2 gridPos)
+    {
+        int defenderCost = selectedDefender.GetStarCost();
         var starDisplay = FindObjectOfType<StarDisplay>();
-		if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS)
+        if (starDisplay.UseStars(defenderCost) == StarDisplay.Status.SUCCESS)
         {
-			SpawnDefender(gridPos, defender.gameObject);
-		}
+            SpawnDefender(gridPos, selectedDefender.gameObject);
+        }
         else
         {
-			Debug.Log ("Insufficient stars to spawn");
-		}
-	}
+            Debug.Log("Insufficient stars to spawn");
+        }
+    }
+
+    private Vector2 GetGridSquareClicked()
+    {
+        Vector2 clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
+        Vector2 gridPos = SnapToGrid(worldPos);
+        return gridPos;
+    }
 
     private Vector2 SnapToGrid(Vector2 rawWorldPos)
     {
@@ -61,7 +72,7 @@ public class DefenderSpawner : MonoBehaviour
         return new Vector2(newX, newY);
     }
 
-	private void SpawnDefender (Vector2 roundedPos, GameObject defender)
+	private void SpawnDefender(Vector2 roundedPos, GameObject defender)
 	{
 		Quaternion zeroRot = Quaternion.identity;
 		GameObject newDef = Instantiate (defender, roundedPos, zeroRot) as GameObject;

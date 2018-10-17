@@ -3,13 +3,12 @@ using System.Collections;
 
 public class Attacker : MonoBehaviour
 {
-    #region state
     float currentSpeed;
     GameObject currentTarget; // target one at a time
-    #endregion
 
     void Start()
     {
+        // I just added this
         FindObjectOfType<LevelController>().AttackerSpawned();
     }
 
