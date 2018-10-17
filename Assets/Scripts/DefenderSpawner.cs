@@ -6,7 +6,7 @@ public class DefenderSpawner : MonoBehaviour
     [SerializeField] AudioClip noDefenderSelected;
     GameObject parent;
     Defender selectedDefender;
-    const string DEFENDER_NAME = "Defenders";
+    const string DEFENDER_PARENT_NAME = "Defenders";
 
 	void Start ()
     {
@@ -20,10 +20,10 @@ public class DefenderSpawner : MonoBehaviour
 
     private void CreateDefenderParent()
     {
-        parent = GameObject.Find(DEFENDER_NAME);
+        parent = GameObject.Find(DEFENDER_PARENT_NAME);
         if (!parent)
         {
-            parent = new GameObject(DEFENDER_NAME);
+            parent = new GameObject(DEFENDER_PARENT_NAME);
         }
     }
 

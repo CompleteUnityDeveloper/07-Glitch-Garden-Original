@@ -9,17 +9,24 @@ public class OptionsController : MonoBehaviour {
     [SerializeField] float defaultVolume = 0.8f;
     [SerializeField] float defaultDifficulty = 2f;
 
-    MusicManager musicManager;
-
 	void Start ()
     {
 		volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
 		diffSlider.value = PlayerPrefsManager.GetDifficulty();
 	}
-	 
-	void Update ()
+	
+	void Update () // So that we hear the volume change
     {
-		musicManager.SetVolume (volumeSlider.value);
+		var musicPlayer = FindObjectOfType<MusicPlayer>();
+		if (musicPlayer)
+		{
+			musicPlayer.SetVolume (volumeSlider.value);
+		}
+		else
+		{
+			Debug.LogWarning("No music player found by " + name + " . Did you start from splash screen?");
+		}
+
 	}
 	
 	public void SaveAndExit ()

@@ -40,6 +40,11 @@ public class LevelLoader : MonoBehaviour {
         SceneManager.LoadScene("Start Screen");
     }
 
+    public void LoadOptionsMenu()
+    {
+        SceneManager.LoadScene("Options Screen");
+    }
+
     public void LoadYouLose()
     {
         SceneManager.LoadScene("Lose Screen");
