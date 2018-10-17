@@ -9,18 +9,18 @@ public class OptionsController : MonoBehaviour {
     [SerializeField] float defaultVolume = 0.8f;
     [SerializeField] float defaultDifficulty = 2f;
 
-	void Start ()
+	void Start()
     {
 		volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
 		diffSlider.value = PlayerPrefsManager.GetDifficulty();
 	}
 	
-	void Update () // So that we hear the volume change
+	void Update() // So that we hear the volume change
     {
 		var musicPlayer = FindObjectOfType<MusicPlayer>();
 		if (musicPlayer)
 		{
-			musicPlayer.SetVolume (volumeSlider.value);
+			musicPlayer.SetVolume(volumeSlider.value);
 		}
 		else
 		{
@@ -29,14 +29,14 @@ public class OptionsController : MonoBehaviour {
 
 	}
 	
-	public void SaveAndExit ()
+	public void SaveAndExit()
     {
 		PlayerPrefsManager.SetMasterVolume (volumeSlider.value);
 		PlayerPrefsManager.SetDifficulty(diffSlider.value);
 		FindObjectOfType<LevelLoader>().StartGame();
 	}
 	
-	public void SetDefaults ()
+	public void SetDefaults()
     {
 		volumeSlider.value = defaultVolume;
 		diffSlider.value = defaultDifficulty;

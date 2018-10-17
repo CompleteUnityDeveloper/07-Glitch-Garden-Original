@@ -11,13 +11,14 @@ public class PlayerPrefsManager : MonoBehaviour
 
     const float MIN_DIFFICULTY = 1f;
     const float MAX_DIFFICULTY = 3f;
-    const float MIN_VOLUME = 1f;
-    const float MAX_VOLUME = 3f;
+    const float MIN_VOLUME = 0f;
+    const float MAX_VOLUME = 1f;
 
     public static void SetMasterVolume(float volume)
     {
         if (volume >= MIN_VOLUME && volume <= MAX_VOLUME) // check valid range
         {
+            Debug.Log("Setting " + MASTER_VOLUME_KEY + " to " + volume);
             PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
 		}
         else
@@ -28,6 +29,7 @@ public class PlayerPrefsManager : MonoBehaviour
 	
 	public static float GetMasterVolume()
     {
+        Debug.Log("Master vol is: " + PlayerPrefs.GetFloat(MASTER_VOLUME_KEY));
         return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
 	}
 	
