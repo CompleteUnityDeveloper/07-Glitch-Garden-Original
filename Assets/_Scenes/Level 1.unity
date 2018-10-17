@@ -406,6 +406,10 @@ Prefab:
       propertyPath: noDefenderSelected
       value: 
       objectReference: {fileID: 8300000, guid: 3db9623b3fb7b42b78fe26f16bebb036, type: 3}
+    - target: {fileID: 11407344, guid: e2114952e48a845cd86a564a272f1cd9, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2114952e48a845cd86a564a272f1cd9, type: 2}
   m_IsPrefabAsset: 0
@@ -712,6 +716,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ed65dde16a38c42a79b8011ae4ed0bbb, type: 2}
+      propertyPath: winLabel
+      value: 
+      objectReference: {fileID: 1826027892}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed65dde16a38c42a79b8011ae4ed0bbb, type: 2}
   m_IsPrefabAsset: 0
@@ -720,6 +728,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 435128, guid: 84fa44bd503264e539d07d93bc011558,
     type: 2}
   m_PrefabInternal: {fileID: 1745763976}
+--- !u!1 &1826027892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 107344, guid: e2114952e48a845cd86a564a272f1cd9,
+    type: 2}
+  m_PrefabInternal: {fileID: 594862929}
 --- !u!1001 &1917851207
 Prefab:
   m_ObjectHideFlags: 0
