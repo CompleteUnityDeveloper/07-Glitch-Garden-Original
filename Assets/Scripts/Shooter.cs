@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// DONE
 public class Shooter : MonoBehaviour
 {
 	[SerializeField] GameObject projectile, gun;
@@ -13,7 +14,7 @@ public class Shooter : MonoBehaviour
     {
         animator = FindObjectOfType<Animator>();
         CreateParentObject();
-        SetMyLaneSpawner();
+        AttemptToSetLaneSpawner();
     }
 
     private void CreateParentObject()
@@ -38,27 +39,27 @@ public class Shooter : MonoBehaviour
 	}
 	
 	// Look through all spawners, and set myLaneSpanwer if found
-	void SetMyLaneSpawner()
+	private void AttemptToSetLaneSpawner()
 	{
-		Spawner[] spawnerArray = FindObjectsOfType<Spawner>();
+		Spawner[] spawners = FindObjectsOfType<Spawner>();
 		
-		foreach (Spawner spawner in spawnerArray)
+		foreach (Spawner spawner in spawners)
         {
             bool isCloseEnough = (spawner.transform.position.y - transform.position.y <= Mathf.Epsilon);
             if (isCloseEnough)
             {
 				myLaneSpawner = spawner;
-				return;
 			}
 		}
 		
 		Debug.LogError (name + " can't find spawner in lane");
 	}
 	
-	bool IsAttackerAheadInLane()
+	private bool IsAttackerAheadInLane()
 	{
 		// Exit if no attackers in lane
-		if (myLaneSpawner.transform.childCount <= 0) {
+		if (myLaneSpawner.transform.childCount <= 0)
+		{
 			return false;
 		}
 		

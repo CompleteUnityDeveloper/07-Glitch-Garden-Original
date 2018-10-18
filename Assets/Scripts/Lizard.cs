@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// DONE
+[RequireComponent(typeof(Attacker))]
 public class Lizard : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D otherCollider)

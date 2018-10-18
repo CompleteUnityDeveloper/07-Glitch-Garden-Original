@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[SelectionBase]
+// DONE
+[SelectionBase]  // To help with selecting in editor
 public class Defender : MonoBehaviour
 {	
     [SerializeField] int starCost = 100;

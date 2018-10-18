@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
+// DONE
 public class Button : MonoBehaviour
 {	
     [SerializeField] Defender defenderPrefab;
@@ -9,13 +9,6 @@ public class Button : MonoBehaviour
     void Start ()
     {
         LabelButtonWithStarCost();
-    }
-
-    private void LabelButtonWithStarCost()
-    {
-        Text costText = GetComponentInChildren<Text>();
-        if (!costText) { Debug.LogError(name + " has no cost text"); }
-        costText.text = defenderPrefab.GetStarCost().ToString();
     }
 
     void OnMouseDown ()
@@ -29,4 +22,11 @@ public class Button : MonoBehaviour
 		GetComponent<SpriteRenderer>().color = Color.white;
         FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
 	}
+
+    private void LabelButtonWithStarCost()
+    {
+        Text costText = GetComponentInChildren<Text>();
+        if (!costText) { Debug.LogError(name + " has no cost text"); }
+        costText.text = defenderPrefab.GetStarCost().ToString();
+    }
 }

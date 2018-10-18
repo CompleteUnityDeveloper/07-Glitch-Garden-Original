@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// DONE
 public class Attacker : MonoBehaviour
 {
     float currentSpeed;
     GameObject currentTarget; // target one at a time
 
-    void Start()
+    // Awake not Start() so doens't get called when enabled from the editor
+    void Awake() 
     {
-        // I just added this
         FindObjectOfType<LevelController>().AttackerSpawned();
     }
 

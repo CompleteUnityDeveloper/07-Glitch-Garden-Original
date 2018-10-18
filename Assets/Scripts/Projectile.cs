@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour {
-
+// DONE
+public class Projectile : MonoBehaviour
+{
     [SerializeField] float speed = 1f;
     [SerializeField] float damage = 10f;
 

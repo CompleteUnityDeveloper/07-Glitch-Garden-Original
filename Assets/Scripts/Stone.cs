@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// DONE
 public class Stone : MonoBehaviour
 {
     void OnTriggerStay2D (Collider2D otherCollider)

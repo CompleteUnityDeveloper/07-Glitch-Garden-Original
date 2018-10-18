@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// DONE
 public class DefenderSpawner : MonoBehaviour
 {
     [SerializeField] AudioClip noDefenderSelected;
@@ -11,6 +12,12 @@ public class DefenderSpawner : MonoBehaviour
 	void Start ()
     {
         CreateDefenderParent();
+    }
+
+    void OnMouseDown()
+    {
+        PlaySoundOnNoSelectedDefender();
+        AttemptToPlaceDefenderAt(GetGridSquareClicked());
     }
 
     public void SetSelectedDefender(Defender defenderToSelect) // From UI
@@ -26,14 +33,8 @@ public class DefenderSpawner : MonoBehaviour
             parent = new GameObject(DEFENDER_PARENT_NAME);
         }
     }
-
-    void OnMouseDown()
-    {
-        PlaySoundIfNoSelectedDefender();
-        AttemptToPlaceDefenderAt(GetGridSquareClicked());
-    }
-
-    private void PlaySoundIfNoSelectedDefender()
+    
+    private void PlaySoundOnNoSelectedDefender()
     {
         if (selectedDefender == null)
         {

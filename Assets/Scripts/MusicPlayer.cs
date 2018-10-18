@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// DONE
 public class MusicPlayer : MonoBehaviour
 {
 	AudioSource audioSource;

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Health : MonoBehaviour {
-
+// DONE
+public class Health : MonoBehaviour 
+{
     [SerializeField] GameObject deathVFX;
     [SerializeField] float health = 100f;
 

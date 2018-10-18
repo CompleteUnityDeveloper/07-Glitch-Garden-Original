@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+// DONE
 public class LevelController : MonoBehaviour {
 
     [SerializeField] float waitToLoad = 3f;
@@ -43,7 +44,7 @@ public class LevelController : MonoBehaviour {
         StopSpawners();
     }
 
-     void FindYouWin()
+    private void FindYouWin()
     {
         winLabel = GameObject.FindWithTag("WinMessageOverlay");
         if (!winLabel)

@@ -4,7 +4,8 @@ using System.Collections;
 
 public class PlayerPrefsManager : MonoBehaviour
 {
-    #region AllPrefs 
+    // Consider region for the learning
+    #region AllPrefs
     const string MASTER_VOLUME_KEY = "master_volume";
 	const string DIFFICULTY_KEY = "difficulty"; // TODO use?
     #endregion
@@ -14,6 +15,7 @@ public class PlayerPrefsManager : MonoBehaviour
     const float MIN_VOLUME = 0f;
     const float MAX_VOLUME = 1f;
 
+    // Static methods are encouraged, static variables aren't
     public static void SetMasterVolume(float volume)
     {
         if (volume >= MIN_VOLUME && volume <= MAX_VOLUME) // check valid range

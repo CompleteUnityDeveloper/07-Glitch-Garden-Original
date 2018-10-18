@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// DONE
 [RequireComponent (typeof(Text))]
 public class StarDisplay : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class StarDisplay : MonoBehaviour
 		UpdateDisplay();
 	}
 	
-	public void AddStars (int amount) {
+	public void AddStars(int amount) {
 		stars += amount;
 		UpdateDisplay();
 	}
@@ -24,7 +25,7 @@ public class StarDisplay : MonoBehaviour
 		return stars >= amount;
 	}
 
-	public void SpendStars (int amount)
+	public void SpendStars(int amount)
     {
 		if (stars >= amount)
         {
@@ -33,9 +34,9 @@ public class StarDisplay : MonoBehaviour
 		}
 	}
 	
-	private void UpdateDisplay ()
+	private void UpdateDisplay()
     {
-		starText.text =stars.ToString();
+		starText.text = stars.ToString();
 	}
 	
 }

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// DONE
 public class GameTimer : MonoBehaviour {
     
 	[SerializeField] float levelSeconds = 100;
@@ -12,7 +13,7 @@ public class GameTimer : MonoBehaviour {
         if (triggeredLevelFinished) { return; }
         GetComponent<Slider>().value = Time.timeSinceLevelLoad / levelSeconds;
 
-        bool timerFinished = Time.timeSinceLevelLoad >= levelSeconds;
+        bool timerFinished = (Time.timeSinceLevelLoad >= levelSeconds);
         if (timerFinished)
         {
             FindObjectOfType<LevelController>().LevelTimerFinished();

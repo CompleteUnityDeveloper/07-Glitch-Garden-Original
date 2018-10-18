@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// DONE
 public class Spawner : MonoBehaviour
 {
-    // TODO consider reading DIFFICULTY from PlayerPrefsManager
+    // TODO consider modifying delays with DIFFICULTY from PlayerPrefsManager
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
     [SerializeField] GameObject[] attackerPrefabArray;
